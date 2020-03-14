@@ -23,10 +23,27 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script type='text/javascript' src="js/script.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
   <title>Cotizador</title>
 </head>
 
 <body>
+  <form>
+    <input type="hidden" name="_modelo" id="model">
+    <input type="hidden" name="_tipo" id="_tipo">
+    <input type="hidden" name="_colorCarro" id="_colorCarro">
+    <input type="hidden" name="_top" id="_top">
+    <input type="hidden" name="_colorTop" id="_colorTop">
+    <input type="hidden" name="_windShield" id="_windShield">
+    <input type="hidden" name="_ledLights" id="_ledLights">
+    <input type="hidden" name="_turnSignals" id="_turnSignals">
+    <input type="hidden" name="descripcion_carro" id="descripcion_carro">
+    
+  
+  <header>
+    <img src="images/identidad/Logo.png" width="350px" height="150px">
+  </header>
   <nav class="contenedor_pestanas">
     <ul class="pestanas">
       <li class="pestana" onclick="alert('Solo en caso de existir')">Promociones</li>
@@ -105,7 +122,11 @@
     </div>
 
     <div class="caracteristicas_datos">
-      <h3>Freedom TXT</h3>
+      <ul>
+        <li><h3>Freedom RVX</h3></li>
+        <li><h3>Freedom TXT</h3></li>
+      </ul>
+      
       <div class="new_row">
         <div class="botones_caracteristicas">
           <ul>

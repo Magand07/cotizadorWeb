@@ -1,0 +1,36 @@
+<html>
+    <body>
+        <p id="demo"></p>
+        <script type='text/javascript' src="js/RVX.js"></script>
+        <script>
+            carrito = new carro();
+            carrito.setModelo("Freedom RVX");
+            carrito.setType("Gas");
+            carrito.setCost();
+            carrito.setColor("Black");
+
+            carrito.setWindshield("Tinted");
+            /*
+            carrito.setTop("Grey");
+            carrito.setSize_top(80);
+            carrito.setLeds(true);
+            carrito.setTurn_signals(true);
+            carrito.setCosto_final();
+            */
+
+            document.getElementById("demo").innerHTML =
+                " <br>modelo: "+carrito.modelo + 
+                " <br>tipo: "+carrito.type+
+                " <br>costo: "+carrito.cost+
+                " <br>color: "+carrito.color+
+                                
+                " <br>top: " + carrito.top +
+                " <br>size_top: " + carrito.size_top +
+                " <br>windshield: " + carrito.windshield +
+                " <br>leds: " + carrito.leds +
+                " <br>turn_signals: " + carrito.turn_signals +
+                " <br>glove_box: " + carrito.glove_box +
+                " <br>costo_final: " + carrito.costo_final;
+        </script>
+    </body>
+</html>
