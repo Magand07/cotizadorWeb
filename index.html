@@ -23,22 +23,13 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script type='text/javascript' src="js/script.js"></script>
+  <script type='text/javascript' src="js/carrito.js"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
   <title>Cotizador</title>
 </head>
 
-<body>
-  <form>
-    <input type="hidden" name="_modelo" id="model">
-    <input type="hidden" name="_tipo" id="_tipo">
-    <input type="hidden" name="_colorCarro" id="_colorCarro">
-    <input type="hidden" name="_top" id="_top">
-    <input type="hidden" name="_colorTop" id="_colorTop">
-    <input type="hidden" name="_windShield" id="_windShield">
-    <input type="hidden" name="_ledLights" id="_ledLights">
-    <input type="hidden" name="_turnSignals" id="_turnSignals">
-    <input type="hidden" name="descripcion_carro" id="descripcion_carro">
+<body>  
     
   
   <header>
@@ -122,9 +113,14 @@
     </div>
 
     <div class="caracteristicas_datos">
-      <ul>
-        <li><h3>Freedom RVX</h3></li>
-        <li><h3>Freedom TXT</h3></li>
+
+      <ul class="modelos">
+        <li>
+          <input class="modelo_list" type="button" value="Freedom RVX">
+        </li>
+        <li>
+          <input class="modelo_list" type="button" value="Freedom TXT">
+        </li>
       </ul>
       
       <div class="new_row">

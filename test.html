@@ -1,35 +1,34 @@
 <html>
     <body>
         <p id="demo"></p>
-        <script type='text/javascript' src="js/RVX.js"></script>
+        <script type='text/javascript' src="js/carrito.js"></script>
         <script>
-            carrito = new carro();
+            carrito = new Carro();
             carrito.setModelo("Freedom RVX");
-            carrito.setType("Gas");
+            carrito.setType("Elite");
             carrito.setCost();
             carrito.setColor("Black");
 
-            carrito.setWindshield("Tinted");
-            /*
             carrito.setTop("Grey");
             carrito.setSize_top(80);
             carrito.setLeds(true);
             carrito.setTurn_signals(true);
+            carrito.setWindShield("Tinted");
+            carrito.setGlove_box(3);
             carrito.setCosto_final();
-            */
-
+            
             document.getElementById("demo").innerHTML =
-                " <br>modelo: "+carrito.modelo + 
-                " <br>tipo: "+carrito.type+
-                " <br>costo: "+carrito.cost+
-                " <br>color: "+carrito.color+
+                " <br>modelo: "+carrito.modelo + "<br>" +
+                " <br>tipo: "+carrito.type + "<br>" +
+                " <br>costo: "+carrito.cost + "<br>" +
+                " <br>color: "+carrito.color + "<br>" +
                                 
-                " <br>top: " + carrito.top +
-                " <br>size_top: " + carrito.size_top +
-                " <br>windshield: " + carrito.windshield +
-                " <br>leds: " + carrito.leds +
-                " <br>turn_signals: " + carrito.turn_signals +
-                " <br>glove_box: " + carrito.glove_box +
+                " <br>top: " + carrito.color_top + "<br>" +
+                " <br>size_top: " + carrito.size_top + "<br>" +
+                " <br>leds: " + carrito.leds + "<br>" +
+                " <br>turn_signals: " + carrito.turn_signals + "<br>" +
+                " <br>windshield: " + carrito.windshield + "<br>" +
+                " <br>glove_box: " + carrito.glove_box + "<br>" +
                 " <br>costo_final: " + carrito.costo_final;
         </script>
     </body>
