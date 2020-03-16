@@ -20,18 +20,27 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/colores.css">
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script type='text/javascript' src="js/script.js"></script>
   <script type='text/javascript' src="js/carrito.js"></script>
+  <script type='text/javascript' src="js/info.js"></script>
+  
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <title>Cotizador</title>
 </head>
 
-<body>  
-    
-  
+<body>
+
+  <script>// These be change for display all document
+    carrito = new Carro();
+    carrito.setModelo("Freedom RXV");
+    carrito.setType("Gas");
+
+  </script>
+
   <header>
     <img src="images/identidad/Logo.png" width="350px" height="150px">
   </header>
@@ -122,36 +131,19 @@
           <input class="modelo_list" type="button" value="Freedom TXT">
         </li>
       </ul>
-      
+
       <div class="new_row">
-        <div class="botones_caracteristicas">
-          <ul>
-            <li><input type="button" value="Asientos extra (2) $1,558" onclick="calcular(1558);llenarTabla('ae_t');">
-            </li>
-            <li><input type="button" value="Rines $727.3" onclick="calcular(727.3);cambiarFoto(9);llenarTabla('r_t');">
-            </li>
-            <li><input type="button" value="Sonido $772.8" onclick="calcular(772.8);llenarTabla('s_t');">
-            </li>
-            <li><input type="button" value="Hielera Izquierda $156.54" onclick="calcular(156.54);llenarTabla('hi_t');">
-            </li>
-            <li><input type="button" value="Hielera Derecha $156.54" onclick="calcular(156.54);llenarTabla('hd_t');">
-            </li>
-            <li><input class="c_negro" type="button" name="Negro" id="Negro"
-                onclick="cambiarFoto(7);llenarTablaColor('Negro');">
-            </li>
-            <li><input class="c_rojo" type="button" name="Rojo" id="Rojo"
-                onclick="cambiarFoto(0);llenarTablaColor('Rojo');">
-            </li>
-            <li><input class="c_blanco" type="button" name="Blanco" id="Blanco"
-                onclick="cambiarFoto(4);llenarTablaColor('Blanco');">
-            </li>
-          </ul>
+        <div class="botones_caracteristicas" id="botones_caracteristicas">
+
         </div>
         <div class="caracteristicas">
+          <ul class="types" id="types">
+           
+          </ul>
           <p><b>Descripcion</b><br>
-            <i>Es una descripcion simple de el articulo</i><br>TEXTO DE EJEMPLO
-            Nemo enim ipsam voluptatem quia sed quia consequuntur
-            magni dolores eos qui ratione voluptatem sequi nesciunt.
+            <i id="descripcion_carrito">
+
+            </i>
           </p>
           <input type="button" name="Borrar" id="Borrar" value="Borrar Cotizacion" onclick="borrarCot();">
         </div>
@@ -218,6 +210,8 @@
     Pagina de ejemplo
     Desarrollador: magand07@gmail.com
   </footer>
+  <!--Should be to the last, for all id's be declared-->
+  <script type='text/javascript' src="index.js"></script>
 </body>
 
 </html>

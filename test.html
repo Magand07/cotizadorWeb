@@ -1,35 +1,50 @@
 <html>
-    <body>
-        <p id="demo"></p>
-        <script type='text/javascript' src="js/carrito.js"></script>
-        <script>
-            carrito = new Carro();
-            carrito.setModelo("Freedom RVX");
-            carrito.setType("Elite");
-            carrito.setCost();
-            carrito.setColor("Black");
 
-            carrito.setTop("Grey");
-            carrito.setSize_top(80);
-            carrito.setLeds(true);
-            carrito.setTurn_signals(true);
-            carrito.setWindShield("Tinted");
-            carrito.setGlove_box(3);
-            carrito.setCosto_final();
-            
-            document.getElementById("demo").innerHTML =
-                " <br>modelo: "+carrito.modelo + "<br>" +
-                " <br>tipo: "+carrito.type + "<br>" +
-                " <br>costo: "+carrito.cost + "<br>" +
-                " <br>color: "+carrito.color + "<br>" +
-                                
-                " <br>top: " + carrito.color_top + "<br>" +
-                " <br>size_top: " + carrito.size_top + "<br>" +
-                " <br>leds: " + carrito.leds + "<br>" +
-                " <br>turn_signals: " + carrito.turn_signals + "<br>" +
-                " <br>windshield: " + carrito.windshield + "<br>" +
-                " <br>glove_box: " + carrito.glove_box + "<br>" +
-                " <br>costo_final: " + carrito.costo_final;
-        </script>
-    </body>
+<body>
+    <p id="demo"></p>
+    <input type="button" value="hi" onclick="attemp();">
+    <script type='text/javascript' src="js/carrito.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        carrito = new Carro();
+        carrito.setModelo("Freedom RVX");
+        carrito.setType("Elite");
+        carrito.setCost();
+        carrito.setColor("Black");
+
+        carrito.setTop("Grey");
+        carrito.setSize_top(80);
+        carrito.setLeds(true);
+        carrito.setTurn_signals(true);
+        carrito.setWindShield("Tinted");
+        carrito.setGlove_box(3);
+        carrito.setCosto_final();
+
+        document.getElementById("demo").innerHTML =
+            " <br>modelo: " + carrito.modelo + "<br>" +
+            " <br>tipo: " + carrito.type + "<br>" +
+            " <br>costo: " + carrito.cost + "<br>" +
+            " <br>color: " + carrito.color + "<br>" +
+
+            " <br>top: " + carrito.color_top + "<br>" +
+            " <br>size_top: " + carrito.size_top + "<br>" +
+            " <br>leds: " + carrito.leds + "<br>" +
+            " <br>turn_signals: " + carrito.turn_signals + "<br>" +
+            " <br>windshield: " + carrito.windshield + "<br>" +
+            " <br>glove_box: " + carrito.glove_box + "<br>" +
+            " <br>costo_final: " + carrito.costo_final;
+
+        function attemp() {
+            $.ajax({
+                type: "GET",
+                url: 'test.html',
+                data: "id=demo", // appears as $_GET['id'] @ your backend side
+                success: function (data) {
+                    document.getElementById("demo").innerHTML = "hiiii";
+                }
+            });
+        }
+    </script>
+</body>
+
 </html>
