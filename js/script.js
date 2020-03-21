@@ -27,4 +27,5 @@ function llenarTablaColor(color){
 
 function borrarCot(){
     location.reload();
+    
 }

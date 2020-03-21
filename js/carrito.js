@@ -2,6 +2,7 @@ class Carro{
     type = "";
     cost = 0;
     color = "";
+    modelo = "";
     costo_final = 0;
     top = ""; // definido por el valor de un color , si es nulo no hay top
     size_top = 0;

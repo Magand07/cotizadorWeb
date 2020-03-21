@@ -26,21 +26,23 @@
   <script type='text/javascript' src="js/script.js"></script>
   <script type='text/javascript' src="js/carrito.js"></script>
   <script type='text/javascript' src="js/info.js"></script>
-  
 
+  <script type='text/javascript' src="js/funciones.js"></script>
+  
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <title>Cotizador</title>
 </head>
 
 <body>
-
-  <script>// These be change for display all document
+  <script>
     carrito = new Carro();
-    carrito.setModelo("Freedom RXV");
+    carrito.setModelo("Freedom TXT");
     carrito.setType("Gas");
-
+    carrito.setCost();
+    setModelo("Freedom TXT");
+    showDescription(carrito.modelo,carrito.type);
+    
   </script>
-
   <header>
     <img src="images/identidad/Logo.png" width="350px" height="150px">
   </header>
@@ -52,7 +54,9 @@
         onclick="alert('Madara a imprimir un PDF con el resumen de la cotizacion para que pueda ser guardado o entregado a cliente')">
         Imprimir</li>
     </ul>
-  </nav>
+  </nav>  
+  <span id="test"></span>
+  <h3 id="modelo_tipo"></h3>
   <div class="main_cotizador">
     <div class="Contenedor_slider ">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -122,35 +126,35 @@
     </div>
 
     <div class="caracteristicas_datos">
-
       <ul class="modelos">
         <li>
-          <input class="modelo_list" type="button" value="Freedom RVX">
+          <input class="modelo_list" type="button" value="Freedom RVX" onclick="setModelo('Freedom RXV');">
         </li>
         <li>
-          <input class="modelo_list" type="button" value="Freedom TXT">
+          <input class="modelo_list" type="button" value="Freedom TXT" onclick="setModelo('Freedom TXT');">
         </li>
       </ul>
 
       <div class="new_row">
         <div class="botones_caracteristicas" id="botones_caracteristicas">
-
+          
         </div>
         <div class="caracteristicas">
           <ul class="types" id="types">
-           
+            
           </ul>
-          <p><b>Descripcion</b><br>
+          <p>
             <i id="descripcion_carrito">
-
             </i>
           </p>
-          <input type="button" name="Borrar" id="Borrar" value="Borrar Cotizacion" onclick="borrarCot();">
-        </div>
+        </div>        
+      </div>
+      <div class="new_row">
+        <input type="button" name="Borrar" id="Borrar" value="Borrar Cotizacion" onclick="borrarCot();">
       </div>
       <div class="new_row">
         <h4 id='total' name='total'>
-          Total $5540 usd
+          Total $<script> document.write(carrito.cost);</script> usd
         </h4>
       </div>
     </div>
@@ -160,7 +164,7 @@
     <h3>Resumen de Cotizacion</h3>
     <div class="new_row">
       <p class="des_row">
-        <b>
+        <b id="resume">
           La presente cotizacion es del carro de golf
           modelo Freedom TXT, con las siguientes caracteristicas:
         </b>
@@ -200,11 +204,11 @@
     </div>
     <div class="new_row">
       <h4 id='total_t' name='total_t'>
-        Total $5540 usd
+        Total $<script> document.write(carrito.cost);</script> usd
       </h4>
     </div>
   </div>
-  <script> var costo = 5540; </script>
+  <script> var costo = carrito.cost; </script>
   <footer>
     <p>Todos los derechos reservados©</p>
     Pagina de ejemplo
@@ -212,6 +216,8 @@
   </footer>
   <!--Should be to the last, for all id's be declared-->
   <script type='text/javascript' src="index.js"></script>
+  
+ 
 </body>
 
 </html>

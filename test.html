@@ -1,7 +1,45 @@
 <html>
+    <link rel="stylesheet" href="css/panel_caracteristicas.css">
 
 <body>
-    <p id="demo"></p>
+    <div class="caracteristicas_datos">
+        <ul class="modelos">
+          <li>
+            <input class="modelo_list" type="button" value="Freedom RVX" onclick="setModelo('Freedom RXV');">
+          </li>
+          <li>
+            <input class="modelo_list" type="button" value="Freedom TXT" onclick="setModelo('Freedom TXT');">
+          </li>
+        </ul>
+  
+        <div class="new_row">
+          <div class="botones_caracteristicas" id="botones_caracteristicas">
+            
+          </div>
+          <div class="caracteristicas">
+            <ul class="types" id="types">
+              
+            </ul>
+            <p>
+              <br>
+              <i id="descripcion_carrito">
+  
+              </i>
+            </p>
+            <input type="button" name="Borrar" id="Borrar" value="Borrar Cotizacion" onclick="borrarCot();">
+          </div>
+        </div>
+        <div class="new_row">
+          <h4 id='total' name='total'>
+            Total $5540 usd
+          </h4>
+        </div>
+      </div>
+
+
+
+
+    <!--p id="demo"></p>
     <input type="button" value="hi" onclick="attemp();">
     <script type='text/javascript' src="js/carrito.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
@@ -45,6 +83,7 @@
             });
         }
     </script>
+    -->
 </body>
 
 </html>

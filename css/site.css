@@ -24,7 +24,7 @@
         font-family: 'Roboto', sans-serif;
         font-weight: bolder;
         width: 100%;
-        background-color: black;
+        background: rgba(30, 30, 30, 0.7);
     }
 
     nav ul {
@@ -34,8 +34,8 @@
         height: 10%;
         margin-top: 3%;
         padding: 0.4%;
-        margin-left: 28%;
-        background-color: black;
+        padding-left: 30%;
+        background: rgba(30, 30, 30, 0.7);
     }
 
     nav li {
@@ -71,7 +71,7 @@
     .caracteristicas_datos {
         display: inline;
         background: rgba(220, 220, 220, 0.9);
-        max-width: 45%;
+        max-width: 65%;
     }
 
     h3, h4 {
@@ -91,9 +91,11 @@
         display: flex;
         background: rgba(30, 30, 30, 0.7);
         padding: 3%;
+        width: 100%;
     }
     .modelos li{
         margin-right:5%;
+        width: 50%;
     }
 
     .modelo_list {        
@@ -112,12 +114,15 @@
         list-style: none;
         display: flex;
         padding: 3%;
+        width: 100%;
     }
     .types li{
         margin-right:5%;
+        width: 35%;
     }
     .types input{
         padding:3%;
+        width: 100%;
         height: 100%;
     }
 
@@ -155,6 +160,7 @@
         float: right;
         margin-right: 8%;
         text-align: justify;
+        font-size: 1.5em;
     }
 
     .costo {
@@ -234,4 +240,8 @@
         text-align: center;
         color: rgba(230, 230, 230, 0.9);
         text-size-adjust: 1.5%;
+    }
+
+    #borrar{
+        width: 100%;
     }
