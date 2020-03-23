@@ -1,3 +1,8 @@
+/***
+ * Creado por: ISC Gutierrez Mendoza Jennifer Stacie
+ * mail. magand07@gmail.com
+ * tel. 5547631372
+ */
 function setModelo(modelo){
     $.ajax({
         type: "GET",
@@ -7,13 +12,13 @@ function setModelo(modelo){
             if (modelo == "Freedom RXV") {
                 document.getElementById("botones_caracteristicas").innerHTML = "" +
                     "<ul>" +
-                    input_adds_rxv+input_colores_rxv+
+                    inputs_adds_basics+input_adds_rxv+input_colores_rxv+
                     "</ul>";
             
             } else if (modelo == "Freedom TXT") {
                 document.getElementById("botones_caracteristicas").innerHTML = "" +
                     "<ul>" +
-                    input_adds_txt+input_colores_txt+
+                    inputs_adds_basics+input_colores_txt+
                     "</ul>";
             }
             types(modelo);
@@ -21,6 +26,12 @@ function setModelo(modelo){
     });
 }
 // despliega la lista de botones para los tipos de carritos para cada modelo
+/***
+ * Creado por: ISC Gutierrez Mendoza Jennifer Stacie
+ * mail. magand07@gmail.com
+ * tel. 5547631372
+ */
+//despliega los tipos de carro disponibles para los modelos
 function types(modelo){
     var types = "";
     if(modelo == "Freedom RXV"){
@@ -34,7 +45,7 @@ function types(modelo){
         "<li>"+
             "<input class='modelo_list' type='button' value='Elite' onclick='showDescription(\"Freedom RXV\",\"Elite\");'/>"+
         "</li>";
-    }else{
+    }/*else{
         types = ""+
         "<li>"+
             "<input class='modelo_list' type='button' value='Gas' onclick='showDescription(\"Freedom TXT\",\"Gas\");'/>"+
@@ -42,15 +53,13 @@ function types(modelo){
         "<li>"+
             "<input class='modelo_list' type='button' value='Electrico' onclick='showDescription(\"Freedom TXT\",\"Electrico\");'/>"+
         "</li>";
-    }
+    }*/
     document.getElementById('types').innerHTML = types;
 
 }
 
 // despliega la descripcion del modelo y tipo
 function showDescription(modelo,type){
-
-    //alert(modelo+type);
     $.ajax({
         type: "GET",
         url: 'index.html',
@@ -87,9 +96,31 @@ function showDescription(modelo,type){
                                                         " es del carro de golf "+
                                                         carrito.modelo + "  en su versión "+
                                                         carrito.type+
-                                                        " , con las siguientes caracteristicas:";   
+                                                        " , con las siguientes caracteristicas:"; 
+            if(modelo == "Freedom RXV"){
+                document.getElementById("tabla_cotizacion").innerHTML = tabla_rxv;
+            }else{
+                document.getElementById("tabla_cotizacion").innerHTML = tabla_txt;
+            }
+        
         }
     });
 }
-
+// muestra los colores de los diferentes tamaños de tops
+function CT_tabla(medida){
+    $.ajax({
+        type: "GET",
+        url: 'index.html',
+        data: "id=colores_top", // appears as $_GET['id'] @ your backend side
+        success: function (data) {
+            var colores_top = "";
+            if(medida == 80){
+                colores_top = colores_top_80;
+            }else if(medida==54){
+                colores_top = colores_top_54;
+            }
+            document.getElementById("tpc_t").innerHTML = colores_top;
+        }
+    });    
+}
  

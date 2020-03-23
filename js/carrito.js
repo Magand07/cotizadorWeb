@@ -46,6 +46,9 @@ class Carro{
         if(this.type == "Electrico"){
             this.cost = 7799;
         }
+        if(this.modelo == "Freedom TXT"){
+            this.cost = 5540;
+        }
     }
 
     setColor(color){

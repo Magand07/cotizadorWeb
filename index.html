@@ -18,30 +18,45 @@
   <meta name="author" content="Ing. Sistemas Computacionales Gutierrez Mendoza Jennifer Stacie" />
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="css/colores.css">
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script type='text/javascript' src="js/script.js"></script>
   <script type='text/javascript' src="js/carrito.js"></script>
   <script type='text/javascript' src="js/info.js"></script>
-
   <script type='text/javascript' src="js/funciones.js"></script>
-  
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
   <title>Cotizador</title>
 </head>
 
 <body>
+  <input type="hidden" id="asientos_extra" value="true" />
+  <input type="hidden" id="rines" value="true" />
+  <input type="hidden" id="sonido" value="true" />
+  <input type="hidden" id="hielera_izq" value="true" />
+  <input type="hidden" id="hielera_der" value="true" />
+  <input type="hidden" id="wind_split" value="true" />
+  <input type="hidden" id="wind_tinted" value="true" />
+  <input type="hidden" id="leds" value="true" />
+  <input type="hidden" id="turn_signals" value="true" />
+  <input type="hidden" id="guantes_conductor" value="true" />
+  <input type="hidden" id="guantes_pasajero" value="true" />
+  <input type="hidden" id="guantes_ambos" value="true" />
+  <input type="hidden" id="top80" value="true" />
+  <input type="hidden" id="top54" value="true" />
   <script>
     carrito = new Carro();
     carrito.setModelo("Freedom TXT");
     carrito.setType("Gas");
     carrito.setCost();
     setModelo("Freedom TXT");
-    showDescription(carrito.modelo,carrito.type);
-    
+    showDescription(carrito.modelo, carrito.type);
+    var stotal = carrito.cost;
   </script>
   <header>
     <img src="images/identidad/Logo.png" width="350px" height="150px">
@@ -54,7 +69,7 @@
         onclick="alert('Madara a imprimir un PDF con el resumen de la cotizacion para que pueda ser guardado o entregado a cliente')">
         Imprimir</li>
     </ul>
-  </nav>  
+  </nav>
   <span id="test"></span>
   <h3 id="modelo_tipo"></h3>
   <div class="main_cotizador">
@@ -137,24 +152,25 @@
 
       <div class="new_row">
         <div class="botones_caracteristicas" id="botones_caracteristicas">
-          
+
         </div>
         <div class="caracteristicas">
           <ul class="types" id="types">
-            
+
           </ul>
           <p>
             <i id="descripcion_carrito">
             </i>
           </p>
-        </div>        
+        </div>
       </div>
       <div class="new_row">
         <input type="button" name="Borrar" id="Borrar" value="Borrar Cotizacion" onclick="borrarCot();">
       </div>
       <div class="new_row">
         <h4 id='total' name='total'>
-          Total $<script> document.write(carrito.cost);</script> usd
+          Total $
+          <script> document.write(carrito.cost);</script> usd
         </h4>
       </div>
     </div>
@@ -172,52 +188,22 @@
     </div>
 
     <div class="new_row">
-      <table>
-        <tr>
-          <th class="title2">Color</th>
-          <th class="title2">Asientos extra</th>
-          <th class="title2">Rines</th>
-          <th class="title2">Hielera Izquierda</th>
-          <th class="title2">Hielera Derecha</th>
-          <th class="title2">Sonido</th>
-        </tr>
-        <tr>
-          <td name="c_t" id="c_t">
-          </td>
+      <table id="tabla_cotizacion">
 
-          <td name="ae_t" id="ae_t" class="f2">
-          </td>
-
-          <td name="r_t" id="r_t">
-          </td>
-
-          <td name="hi_t" id="hi_t" class="f2">
-          </td>
-
-          <td name="hd_t" id="hd_t">
-          </td>
-
-          <td name="s_t" id="s_t" class="f2">
-          </td>
-        </tr>
       </table>
     </div>
     <div class="new_row">
       <h4 id='total_t' name='total_t'>
-        Total $<script> document.write(carrito.cost);</script> usd
+        Total $
+        <script> document.write(carrito.cost);</script> usd
       </h4>
     </div>
   </div>
-  <script> var costo = carrito.cost; </script>
   <footer>
     <p>Todos los derechos reservados©</p>
     Pagina de ejemplo
     Desarrollador: magand07@gmail.com
   </footer>
-  <!--Should be to the last, for all id's be declared-->
-  <script type='text/javascript' src="index.js"></script>
-  
- 
 </body>
 
 </html>
