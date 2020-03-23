@@ -14,14 +14,17 @@ function setModelo(modelo){
                     "<ul>" +
                     inputs_adds_basics+input_adds_rxv+input_colores_rxv+
                     "</ul>";
+                document.getElementById("tabla_cotizacion").innerHTML = tabla_rxv;
             
             } else if (modelo == "Freedom TXT") {
                 document.getElementById("botones_caracteristicas").innerHTML = "" +
                     "<ul>" +
                     inputs_adds_basics+input_colores_txt+
                     "</ul>";
+                document.getElementById("tabla_cotizacion").innerHTML = tabla_txt;
             }
             types(modelo);
+            
         }
     });
 }
@@ -96,13 +99,7 @@ function showDescription(modelo,type){
                                                         " es del carro de golf "+
                                                         carrito.modelo + "  en su versión "+
                                                         carrito.type+
-                                                        " , con las siguientes caracteristicas:"; 
-            if(modelo == "Freedom RXV"){
-                document.getElementById("tabla_cotizacion").innerHTML = tabla_rxv;
-            }else{
-                document.getElementById("tabla_cotizacion").innerHTML = tabla_txt;
-            }
-        
+                                                        " , con las siguientes caracteristicas:";         
         }
     });
 }
