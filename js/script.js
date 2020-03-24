@@ -3,6 +3,30 @@
  * mail. magand07@gmail.com
  * tel. 5547631372
  */
+//WIP Help!
+function sumarTopColor(cantidad,input){
+  $.ajax({
+    type: "GET",
+    url: 'test.html',
+    data: "id=total_cost",
+    success: function (data) {            
+      var msg = "Total $";
+      var moneda = " usd";
+
+      valor = input.value;
+      //alert(valor+" id tabla: "+id_tabla);
+      if (valor == "true") {
+          input.value = false;
+          stotal = stotal + costo;     
+      } else {
+        input.value = true;
+        stotal = stotal - costo;
+      }
+      document.getElementById("total").innerHTML = msg+stotal+moneda;
+      document.getElementById("total_t").innerHTML = msg+stotal+moneda;
+    }
+  });
+}
 function calcular(costo,nombre,input,id_tabla){
     $.ajax({
       type: "GET",
@@ -13,14 +37,14 @@ function calcular(costo,nombre,input,id_tabla){
         var moneda = " usd";
 
         valor = input.value;
-        //alert(valor+" id tabla: "+id_tabla);
+        alert(valor+" id tabla: "+id_tabla+" input "+input);
         if (valor == "false") {
           var respuesta = confirm("Cancelar "+nombre+"?");
           if (respuesta) {
             input.value = true;
             stotal = stotal - costo;
             // cancela el costo en la tabla 
-            document.getElementById(id_tabla).innerHTML = "-";
+            document.getElementById(id_tabla).innerHTML = "";
           }
         } else {
           input.value = false;
@@ -32,14 +56,29 @@ function calcular(costo,nombre,input,id_tabla){
     });
   }
 
+// activar o desactivar la imagen de clase
 function cambiar(clase,input){
-  alert(clase);
+  //alert(clase+" -> "+input.value);
   var bandera = input.value;
   if(bandera == "false"){
     $("."+clase).hide();
     input.value = true;
   }else{
     input.value = false;
+    $("."+clase).show();
+  }
+}
+
+// cambia el color del carrito 
+function cambiarColor(clase,input){
+  //alert(clase+" -> "+input.value);
+  var bandera = input.value;
+  if(bandera == "false"){
+    $("."+clase).hide();
+    input.value = true;
+  }else{
+    input.value = false;
+    allColorsOff();
     $("."+clase).show();
   }
 }
@@ -63,8 +102,8 @@ function borrarCot(){
 }
 // oculta todas las imagenes de inicio
 function firstLoad(){
-  $(".negro").show();
-  $(".rojo").hide();
+  $(".negro").hide();
+  $(".rojo").show();
   $(".blanco").hide();
   $(".inf_red").hide();
   $(".azul_electric").hide();
@@ -85,6 +124,8 @@ function firstLoad(){
   $(".negro80").hide();
   $(".grey80").hide();
   $(".oyster80").hide();  
+  $(".split").hide();  
+  $(".tinted").hide();    
 }
 // all off
 function allOff(){
@@ -110,4 +151,19 @@ function allOff(){
   $(".negro80").hide();
   $(".grey80").hide();
   $(".oyster80").hide();  
+  $(".split").hide();  
+  $(".tinted").hide();  
+}
+
+// dejar todas los colores en off
+function allColorsOff(){
+  $(".negro").hide();
+  $(".rojo").hide();
+  $(".blanco").hide();
+  $(".inf_red").hide();
+  $(".azul_electric").hide();
+  $(".almond").hide();
+  $(".charcoal").hide();
+  $(".platinum").hide();
+  $(".ocean_grey").hide();
 }

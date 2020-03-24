@@ -20,7 +20,6 @@ let descripcion_elite_rxv = "Baterías de litio sin mantenimiento" +
     "<br>Eficiencia energética inmejorable" +
     "<br>Rendimiento probado de las baterías de litio Samsung SDI";
 
-
 let descripcion_gas_txt = "Motor de gasolina de 13.5 hp con inyección electrónica de combustible de circuito cerrado" +
     "<br>Los amortiguadores hidráulicos ayudan en una conducción suave" +
     "<br>Indicador de combustible" +
@@ -31,19 +30,19 @@ let descripcion_electrico_txt = "Tren motriz de 48 voltios CC" +
     "<br>Medidor de estado de carga" +
     "<br>Asiento optativo orientado hacia atrás";
 
-let input_colores_txt = "<li><input class='c_negro' type='button' name='Negro' id='Negro' onclick='cambiarFoto(7);llenarTablaColor(\"Negro\");'>" +
+let input_colores_txt = "<li><input alt='Black' class='c_negro' type='button' name='Negro' id='Negro' onclick='cambiarFoto(7);llenarTablaColor(\"Negro\");'>" +
     "</li>" +
-    "<li><input class='c_rojo' type='button' name='Rojo' id='Rojo'" +
+    "<li><input alt='Red' class='c_rojo' type='button' name='Rojo' id='Rojo'" +
     " onclick='cambiarFoto(0);llenarTablaColor(\"Rojo\");'>" +
     "</li>" +
-    "<li><input class='c_blanco' type='button' name='Blanco' id='Blanco'" +
+    "<li><input alt='White' class='c_blanco' type='button' name='Blanco' id='Blanco'" +
     " onclick='cambiarFoto(4);llenarTablaColor(\"Blanco\");'>" +
     "</li>";
 
-let inputs_adds_basics = ""+
-    "<li><input type='button' value='Asientos extra (2) $1,558' onclick='calcular(1558,\"Asientos extra\",getElementById(\"asientos_extra\"),\"ae_t\");llenarTabla(\"ae_t\",\"Si\");'>" +
+let inputs_adds_basics = "" +
+    "<li><input type='button' value='Asientos extra (2) $1,558' onclick='coloresAsientos();calcular(1558,\"Asientos extra\",getElementById(\"asientos_extra\"),\"ae_t\");llenarTabla(\"ae_t\",\"Si\");'>" +
     "</li>" +
-    "<li><input type='button' value='Rines $727.3' onclick='calcular(727.3,\"Rines\",getElementById(\"rines\"));cambiarFoto(9,\"r_t\");llenarTabla(\"r_t\",\"Si\");'>" +
+    "<li><input type='button' value='Rines $727.3' onclick='calcular(727.3,\"Rines\",getElementById(\"rines\"),\"r_t\");cambiarFoto(9,\"r_t\");llenarTabla(\"r_t\",\"Si\");'>" +
     "</li>" +
     "<li><input type='button' value='Sonido $772.8' onclick='calcular(772.8,\"Sonido\",getElementById(\"sonido\"),\"s_t\");llenarTabla(\"s_t\",\"Si\");'>" +
     "</li>" +
@@ -52,36 +51,30 @@ let inputs_adds_basics = ""+
     "<li><input type='button' value='Hielera Derecha $156.54' onclick='calcular(156.54,\"Hielera Derecha\",getElementById(\"hielera_der\"),\"hd_t\");llenarTabla(\"hd_t\",\"Si\");'>" +
     "</li>";
 
-let input_colores_rxv = "<li><input class='c_negro' type='button' name='Negro' id='Negro' onclick='cambiarFoto(7);llenarTablaColor(\"Negro\");'>" +
+let input_colores_rxv = "<li><input alt='Black' class='c_negro' type='button' name='Negro' id='Negro' onclick='cambiarColor(\"negro\",getElementById(\"negro\"));cambiarFoto(7);llenarTablaColor(\"Negro\");'>" +
     "</li>" +
-    "<li><input class='c_rojo' type='button' name='Rojo' id='Rojo' onclick='cambiarFoto(0);llenarTablaColor(\"Rojo\");'>" +
+    "<li><input alt='Red' class='c_rojo' type='button' name='Rojo' id='Rojo' onclick='cambiarColor(\"rojo\",getElementById(\"rojo\"));cambiarFoto(0);llenarTablaColor(\"Rojo\");'>" +
     "</li>" +
-    "<li><input class='c_blanco' type='button' name='Blanco' id='Blanco' onclick='cambiarFoto(4);llenarTablaColor(\"Blanco\");'>" +
+    "<li><input alt='White' class='c_blanco' type='button' name='Blanco' id='Blanco' onclick='cambiarColor(\"blanco\",getElementById(\"blanco\"));cambiarFoto(4);llenarTablaColor(\"Blanco\");'>" +
     "</li>" +
-    "<li><input class='c_inf_red' type='button' name='Inf_red' id='Inf_red' onclick='cambiarFoto(4);llenarTablaColor(\"Inf red\");'>" +
+    "<li><input alt='Inferno red' class='c_inf_red' type='button' name='Inf_red' id='Inf_red' onclick='cambiarColor(\"inf_red\",getElementById(\"inf_red\"));cambiarFoto(4);llenarTablaColor(\"Inf red\");'>" +
     "</li>" +
-    "<li><input class='c_azul_electric' type='button' name='Azul electric' id='Azul electric' onclick='cambiarFoto(4);llenarTablaColor(\"Azul electric\");'>" +
+    "<li><input alt='Azul electric' class='c_azul_electric' type='button' name='Azul electric' id='Azul electric' onclick='cambiarColor(\"azul_electric\",getElementById(\"azul_electric\"));cambiarFoto(4);llenarTablaColor(\"Azul electric\");'>" +
     "</li>" +
-    "<li><input class='c_almond' type='button' name='Almond' id='Almond' onclick='cambiarFoto(4);llenarTablaColor(\"Almond\");'>" +
+    "<li><input alt='Almond' class='c_almond' type='button' name='Almond' id='Almond' onclick='cambiarColor(\"almond\",getElementById(\"almond\"));cambiarFoto(4);llenarTablaColor(\"Almond\");'>" +
     "</li>" +
-    "<li><input class='c_charcoal' type='button' name='Charcoal' id='Charcoal' onclick='cambiarFoto(4);llenarTablaColor(\"Charcoal\");'>" +
+    "<li><input alt='Charcoal' class='c_charcoal' type='button' name='Charcoal' id='Charcoal' onclick='cambiarColor(\"charcoal\",getElementById(\"charcoal\"));cambiarFoto(4);llenarTablaColor(\"Charcoal\");'>" +
     "</li>" +
-    "<li><input class='c_platinum' type='button' name='Platinum' id='Platinum' onclick='cambiarFoto(4);llenarTablaColor(\"Platinum\");'>" +
+    "<li><input alt='Platinum' class='c_platinum' type='button' name='Platinum' id='Platinum' onclick='cambiarColor(\"platinum\",getElementById(\"platinum\"));cambiarFoto(4);llenarTablaColor(\"Platinum\");'>" +
     "</li>" +
-    "<li><input class='c_ocean_gray' type='button' name='Ocean gray' id='Ocean gray' onclick='cambiarFoto(4);llenarTablaColor(\"Ocean gray\");'>" +
+    "<li><input alt='Ocean gray' class='c_ocean_gray' type='button' name='Ocean gray' id='Ocean gray' onclick='cambiarColor(\"ocean_grey\",getElementById(\"ocean_grey\"));cambiarFoto(4);llenarTablaColor(\"Ocean gray\");'>" +
     "</li>";
 
 let input_adds_rxv = "<li>" +
-    "<input type='button' value='Windshield Split $156' onclick='calcular(156,\"Windshield Split\",getElementById(\"wind_split\"),\"w_t\");llenarTabla(\"w_t\",\"Split\");'>" +
+    "<input type='button' value='Luces LED $195.65' onclick='calcular(195.65,\"LucesLed\",getElementById(\"leds\"),\"led_t\");llenarTabla(\"led_t\",\"Si\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='WindShield Tinted $195.82' onclick='calcular(195.82,\"Windshield Tinted\",getElementById(\"wind_tinted\"),\"w_t\");llenarTabla(\"w_t\",\"Tinted\");'>" +
-    "</li>" +
-    "<li>" +
-    "<input type='button' value='Luces LED $195.65' onclick='calcular(195.65,\"Luces Led\",getElementById(\"leds\"),\"led_t\");llenarTabla(\"led_t\",\"Si\");'>" +
-    "</li>" +
-    "<li>" +
-    "<input type='button' value='Turn Signals $305' onclick='calcular(305,\"Turn Signals\",getElementById(\"turn_signals\"),\"ts_t\");llenarTabla(\"ts_t\",\"Si\");'>" +
+    "<input type='button' value='Turn Signals $305' onclick='calcular(305,\"TurnSignals\",getElementById(\"turn_signal\"),\"ts_t\");llenarTabla(\"ts_t\",\"Si\");'>" +
     "</li>" +
     "<li>" +
     "<input type='button' value='Caja de guantes Conductor $132.80' onclick='calcular(132.80,\"Caja guantes Conductor\",getElementById(\"guantes_conductor\"),\"gb_t\");llenarTabla(\"gb_t\",\"Conductor\");'>" +
@@ -90,25 +83,38 @@ let input_adds_rxv = "<li>" +
     "<input type='button' value='Caja de guantes Pasajero $132.80' onclick='calcular(132.80,\"Caja guantes Pasajero\",getElementById(\"guantes_pasajero\"),\"gb_t\");llenarTabla(\"gb_t\",\"Pasajero\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='Caja de guantes Ambos $204.82' onclick='calcular(204.82,\"Caja guantes Pasajero-Conductor\",getElementById(\"guantes_ambos\"),\"gb_t\");llenarTabla(\"gb_t\",\"Ambos\");'>" +
+    "<input type='button' value='Caja de guantes Ambos $204.82' onclick='calcular(204.82,\"Caja guantes Pasajero y Conductor\",getElementById(\"guantes_ambos\"),\"gb_t\");llenarTabla(\"gb_t\",\"Ambos\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='Top 80\" $315.12' onclick='calcular(315.12,\"Top 80in\",getElementById(\"top80\"),\"tp_t\");llenarTabla(\"tp_t\",\"80\");CT_tabla(\"80\");'>" +
+    "<input type='button' value='Top 80in $315.12' onclick='calcular(315.12,\"Top80in\",getElementById(\"top_80\"),\"tp_t\");llenarTabla(\"tp_t\",\"80\");CT_tabla(\"80\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='Top 54\" $271' onclick='calcular(271,\"Top 54in\",getElementById(\"top54\"),\"tp_t\");llenarTabla(\"tp_t\",\"54\");CT_tabla(\"54\");'>" +
-    "</li>";
+    "<input type='button' value='Top 54in $271' onclick='calcular(271,\"Top54in\",getElementById(\"top_54\"),\"tp_t\");llenarTabla(\"tp_t\",\"54\");CT_tabla(\"54\");'>" +
+    "</li>"+
+    "<li>" +
+    "<input type='button' value='Windshield Split $156' onclick='cambiar(\"split\",getElementById(\"split\"));calcular(156,\"wind_split\",getElementById(\"wind_split\"),\"w_t\");llenarTabla(\"w_t\",\"Split\");'>" +
+    "</li>" +
+    "<li>" +
+    "<input type='button' value='WindShield Tinted $195.82' onclick='cambiar(\"tinted\",getElementById(\"tinted\"));calcular(195.82,\"wind_tinted\",getElementById(\"wind_tinted\"),\"w_t\");llenarTabla(\"w_t\",\"Tinted\");'>" +
+    "</li>" ;
 
-let colores_top_80 = ''+
-    '<input type="button" onclick="cambiar(\'stonebeige80\');" class="c_stone_beige" />' +
-    '<input type="button" onclick="cambiar(\'negro80\');" class="c_negro" />' +
-    '<input type="button" onclick="cambiar(\'grey80\');" class="c_grey" />' +
-    '<input type="button" onclick="cambiar(\'oyster80\');" class="c_oyster" />';
-let colores_top_54 = ''+
-    '<input type="button" onclick="cambiar(\'stonebeige54\');class="c_stone_beige" />' +
-    '<input type="button" onclick="cambiar(\'negro54\');class="c_negro" />' +
-    '<input type="button" onclick="cambiar(\'oyster54\');class="c_oyster" />';
+let colores_top_80 = '' +
+    '<input type="button" alt="color stone beige" onclick="cambiar(\'stonebeige80\',getElementById(\'stonebeige80\'));" class="c_stone_beige" />' +
+    '<input type="button" alt="color negro" onclick="cambiar(\'negro80\',getElementById(\'negro80\'));" class="c_negro" />' +
+    '<input type="button" alt="color grey" onclick="cambiar(\'grey80\',getElementById(\'grey80\'));" class="c_grey" />' +
+    '<input type="button" alt="color oyster" onclick="cambiar(\'oyster80\',getElementById(\'oyster80\'));" class="c_oyster" />';
 
+let colores_top_54 = '' +
+    '<input type="button" alt="color stonebeige" onclick="cambiar(\'stonebeige54\',getElementById(\'stonebeige54\'));" class="c_stone_beige" />' +
+    '<input type="button" alt="color negro" onclick="cambiar(\'negro54\',getElementById(\'negro54\'));" class="c_negro" />' +
+    '<input type="button" alt="color oyster" onclick="cambiar(\'oyster54\',getElementById(\'oyster54\'));" class="c_oyster" />';
+
+let colores_asientos = '' +
+    '<input type="button" alt="color beige" onclick="cambiar(\'abeige\',getElementById(\'abeige\'));" class="c_beige" />' +
+    '<input type="button" alt="color grey" onclick="cambiar(\'agrey\',getElementById(\'agrey\'));" class="c_grey" />' +
+    '<input type="button" alt="color negro" onclick="cambiar(\'anegro\',getElementById(\'anegro\'));" class="c_negro" />' +
+    '<input type="button" alt="color oyster" onclick="cambiar(\'aoyster\',getElementById(\'aoyster\'));" class="c_oyster" />' +
+    '<input type="button" alt="color stonebeige" onclick="cambiar(\'astonebeige\',getElementById(\'astonebeige\'));" class="c_stone_beige" />';
 
 let tabla_rxv = '<tr>' +
     '<th class="title2">Color</th>' +
@@ -173,3 +179,68 @@ let tabla_txt = '<tr>' +
     '<td name="s_t" id="s_t" class="f2">' +
     '</td>' +
     '</tr>';
+let carrousel = ''+
+      '<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">'+
+        '<ol class="carousel-indicators">'+
+'          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>'+
+'          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>'+
+'          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>'+
+'          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>'+
+'          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>'+
+'          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>'+
+'          <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>'+
+'          <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>'+
+'          <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>'+
+'          <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>'+
+        '</ol>'+
+        '<div class="carousel-inner">'+
+'          <div class="carousel-item active">'+
+            '<img class="d-block w-100" src="images/gasRojo0.PNG" alt="Primer slide" title="Gas Rojo" width="500px"'+
+              'height="340px">'+
+'          </div>'+
+'          <div class="carousel-item">'+
+            '<img class="d-block w-100" src="images/gasRojo1.PNG" alt="Segundo slide" title="Gas Rojo" width="500px"'+
+              'height="340px">'+
+'          </div>'+
+'          <div class="carousel-item">'+
+            '<img class="d-block w-100" src="images/gasRojo2.PNG" alt="Tercer slide" title="Gas Rojo Asientos Extra"'+
+              'width="500px" height="340px">'+
+'          </div>'+
+'          <div class="carousel-item">'+
+            '<img class="d-block w-100" src="images/electricNegro0.PNG" alt="Electrico Negro" width="500px"'+
+              'height="340px">'+
+'          </div>'+
+'          <div class="carousel-item">'+
+            '<img class="d-block w-100" src="images/gasBlanco0.PNG" alt="Gas Blanco " title="Gas Blanco" width="500px"'+
+              'height="340px">'+
+'          </div>'+
+'          <div class="carousel-item">'+
+            '<img class="d-block w-100" src="images/gasBlanco1.PNG" alt="Gas Blanco " title="Gas Blanco" width="500px"'+
+              'height="340px">'+
+'          </div>'+
+'          <div class="carousel-item">'+
+            '<img class="d-block w-100" src="images/gasBlanco2.PNG" alt="Gas Blanco Asientos Extra"'+
+              'title="Gas Rojo Asientos Extra" width="500px" height="340px">'+
+'          </div>'+
+'          <div class="carousel-item">'+
+            '<img class="d-block w-100" src="images/gasNegro0.PNG" alt="Gas Negro" title="Gas Negro" width="500px"'+
+              'height="340px">'+
+'          </div>'+
+'          <div class="carousel-item">'+
+            '<img class="d-block w-100" src="images/gasNegro1.PNG" alt="Gas Negro" title="Gas Negro" width="500px"'+
+              'height="340px">'+
+'          </div>'+
+'          <div class="carousel-item">'+
+            '<img class="d-block w-100" src="images/gasNegro2.PNG" alt="Gas Negro" title="Gas Negro Asientos Extra"'+
+              'title="Gas Rojo Asientos Extra" width="500px" height="340px">'+
+'          </div>'+
+        '</div>'+
+      '</div>'+
+      '<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">'+
+        '<span class="carousel-control-prev-icon" aria-hidden="true"></span>'+
+        '<span class="sr-only">Previous</span>'+
+      '</a>'+
+      '<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">'+
+        '<span class="carousel-control-next-icon" aria-hidden="true"></span>'+
+        '<span class="sr-only">Next</span>'+
+      '</a>';

@@ -1,3 +1,8 @@
+/***
+ * Creado por: ISC Gutierrez Mendoza Jennifer Stacie
+ * mail. magand07@gmail.com
+ * tel. 5547631372
+ */
 class Carro{
     type = "";
     cost = 0;
@@ -125,8 +130,6 @@ class Carro{
             case 3:
                 this.costo_final = this.costo_final + 204.82;
                 break;
-
         }
     }
-
 }

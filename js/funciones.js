@@ -15,6 +15,8 @@ function setModelo(modelo){
                     inputs_adds_basics+input_adds_rxv+input_colores_rxv+
                     "</ul>";
                 document.getElementById("tabla_cotizacion").innerHTML = tabla_rxv;
+                $(".contenedor_imagen").show();
+                $("#Contenedor_slider").hide();
             
             } else if (modelo == "Freedom TXT") {
                 document.getElementById("botones_caracteristicas").innerHTML = "" +
@@ -22,9 +24,11 @@ function setModelo(modelo){
                     inputs_adds_basics+input_colores_txt+
                     "</ul>";
                 document.getElementById("tabla_cotizacion").innerHTML = tabla_txt;
+                document.getElementById('Contenedor_slider').innerHTML = carrousel;
+                $(".contenedor_imagen").hide();
+                $("#Contenedor_slider").show();
             }
-            types(modelo);
-            
+            types(modelo);            
         }
     });
 }
@@ -44,6 +48,8 @@ function types(modelo){
             "<input class='modelo_list' type='button' value='Elite' onclick='showDescription(\"Freedom RXV\",\"Elite\");'/>"+
         "</li>";
     }
+    carrito.setCost();
+    stotal = carrito.cost;
     document.getElementById('types').innerHTML = types;
 }
 
@@ -58,6 +64,7 @@ function showDescription(modelo,type){
             carrito.setModelo(modelo);
             carrito.setType(type);
             carrito.setCost();
+            stotal = carrito.cost;
             switch (type) {
                 case "Elite":
                     desc = descripcion_elite_rxv+carrito.cost;
@@ -89,12 +96,23 @@ function showDescription(modelo,type){
         }
     });
 }
-// muestra los colores de los diferentes tamaños de tops
+// muestra los colores disponibles para el asiento extra
+function coloresAsientos(){
+    $.ajax({
+        type: "GET",
+        url: 'index.html',
+        data: "id=colores_top",
+        success: function (data) {
+            document.getElementById("ae_t").innerHTML = colores_asientos;
+        }
+    });    
+}
+// muestra los colores de acuerdo al tamaño de top
 function CT_tabla(medida){
     $.ajax({
         type: "GET",
         url: 'index.html',
-        data: "id=colores_top", // appears as $_GET['id'] @ your backend side
+        data: "id=colores_top", 
         success: function (data) {
             var colores_top = "";
             if(medida == 80){

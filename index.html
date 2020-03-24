@@ -7,6 +7,7 @@
  * tel. 5547631372
  */
 -->
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -30,6 +31,7 @@
   <script type='text/javascript' src="js/script.js"></script>
   <script type='text/javascript' src="js/funciones.js"></script>
   <script type='text/javascript' src="js/info.js"></script>
+  <script type='text/javascript' src="js/init.js"></script>
 
   <title>Cotizador</title>
 </head>
@@ -40,30 +42,47 @@
   <input type="hidden" id="sonido" value="true" />
   <input type="hidden" id="hielera_izq" value="true" />
   <input type="hidden" id="hielera_der" value="true" />
-  <input type="hidden" id="wind_split" value="true" />
-  <input type="hidden" id="wind_tinted" value="true" />
+  
   <input type="hidden" id="leds" value="true" />
-  <input type="hidden" id="turn_signals" value="true" />
+  <input type="hidden" id="turn_signal" value="true" />
   <input type="hidden" id="guantes_conductor" value="true" />
   <input type="hidden" id="guantes_pasajero" value="true" />
   <input type="hidden" id="guantes_ambos" value="true" />
-  <input type="hidden" id="top80" value="true" />
-  <input type="hidden" id="top54" value="true" />
-  <input type="hidden" id="imagen" value="" />
-  <!--
-    Poner banderas para el color del top 
-    pero que pasa cuadno varias esten en true?
-    cancelarlas con el evento
-  -->
-  <script>
-    carrito = new Carro();
-    carrito.setModelo("Freedom TXT");
-    carrito.setType("Gas");
-    carrito.setCost();
-    setModelo("Freedom TXT");
-    showDescription(carrito.modelo, carrito.type);
-    var stotal = carrito.cost;
-  </script>
+  <input type="hidden" id="top_80" value="true" />
+  <input type="hidden" id="top_54" value="true" />
+  <input type="hidden" id="wind_split" value="true" />
+  <input type="hidden" id="wind_tinted" value="true" />
+
+  <!-- flags to css-->
+  <!-- car color-->
+  <input type="hidden" id="negro" value="true" />
+  <input type="hidden" id="rojo" value="true" />
+  <input type="hidden" id="blanco" value="true" />
+  <input type="hidden" id="inf_red" value="true" />
+  <input type="hidden" id="azul_electric" value="true" />
+  <input type="hidden" id="almond" value="true" />
+  <input type="hidden" id="charcoal" value="true" />
+  <input type="hidden" id="platinum" value="true" />
+  <input type="hidden" id="ocean_grey" value="true" />
+  <!-- extra seat-->
+  <input type="hidden" id="abeige" value="true" />
+  <input type="hidden" id="agrey" value="true" />
+  <input type="hidden" id="anegro" value="true" />
+  <input type="hidden" id="aoyster" value="true" />
+  <input type="hidden" id="astonebeige" value="true" />
+  <!-- top 54in color-->
+  <input type="hidden" id="stonebeige54" value="true" />
+  <input type="hidden" id="negro54" value="true" />
+  <input type="hidden" id="oyster54" value="true" />
+  <!-- top 80in color-->
+  <input type="hidden" id="stonebeige80" value="true" />
+  <input type="hidden" id="negro80" value="true" />
+  <input type="hidden" id="grey80" value="true" />
+  <input type="hidden" id="oyster80" value="true" />
+  <!-- windshield type-->
+  <input type="hidden" id="split" value="true" />
+  <input type="hidden" id="tinted" value="true" />
+
   <header>
     <img src="images/identidad/Logo.png" width="350px" height="150px">
   </header>
@@ -79,35 +98,39 @@
   <span id="test"></span>
   <h3 id="modelo_tipo"></h3>
   <div class="main_cotizador">
+
+    <div class="Contenedor_slider" id="Contenedor_slider">
+    </div>
+
     <div class="contenedor_imagen">
-      <img class="negro" src="images/RXV/colores/negro.png"  alt="negro" width="500px" height="340">
-      <img class="rojo" src="images/RXV/colores/rojo.png"  alt="rojo" width="500px" height="340">
-      <img class="blanco" src="images/RXV/colores/blanco.png"  alt="blanco" width="500px" height="340">
-      <img class="inf_red" src="images/RXV/colores/inf_red.png"  alt="inf_red" width="500px" height="340">
-      <img class="azul_electric" src="images/RXV/colores/azul_electric.png"  alt="azul_electric" width="500px" height="340">
-      <img class="almond" src="images/RXV/colores/almond.png"  alt="almond" width="500px" height="340">
-      <img class="charcoal" src="images/RXV/colores/charcoal.png"  alt="charcoal" width="500px" height="340">
-      <img class="platinum" src="images/RXV/colores/platinum.png"  alt="platinum" width="500px" height="340">
-      <img class="ocean_grey" src="images/RXV/colores/ocean_grey.png"  alt="ocean_grey" width="500px" height="340">
-      
+      <img class="negro" src="images/RXV/colores/negro.png" alt="negro" width="500px" height="340">
+      <img class="rojo" src="images/RXV/colores/rojo.png" alt="rojo" width="500px" height="340">
+      <img class="blanco" src="images/RXV/colores/blanco.png" alt="blanco" width="500px" height="340">
+      <img class="inf_red" src="images/RXV/colores/inf_red.png" alt="inf_red" width="500px" height="340">
+      <img class="azul_electric" src="images/RXV/colores/azul_electric.png" alt="azul_electric" width="500px" height="340">
+      <img class="almond" src="images/RXV/colores/almond.png" alt="almond" width="500px" height="340">
+      <img class="charcoal" src="images/RXV/colores/charcoal.png" alt="charcoal" width="500px" height="340">
+      <img class="platinum" src="images/RXV/colores/platinum.png" alt="platinum" width="500px" height="340">
+      <img class="ocean_grey" src="images/RXV/colores/ocean_grey.png" alt="ocean_grey" width="500px" height="340">
+
       <img class="abeige" src="images/RXV/asientos extra/abeige.png" alt="abeige" width="500px" height="340">
       <img class="agrey" src="images/RXV/asientos extra/agrey.png" alt="agrey" width="500px" height="340">
       <img class="anegro" src="images/RXV/asientos extra/anegro.png" alt="anegro" width="500px" height="340">
       <img class="aoyster" src="images/RXV/asientos extra/aoyster.png" alt="aoyster" width="500px" height="340">
       <img class="astonebeige" src="images/RXV/asientos extra/astonebeige.png" alt="astonebeige" width="500px" height="340">
-      
+
       <img class="stonebeige54" src="images/RXV/top54/stonebeige54.png" alt="stonebeige54" width="500px" height="340">
       <img class="negro54" src="images/RXV/top54/negro54.png" alt="negro54" width="500px" height="340">
       <img class="oyster54" src="images/RXV/top54/oyster54.png" alt="oyster54" width="500px" height="340">
-      
+
       <img class="stonebeige80" src="images/RXV/top80/stonebeige80.png" alt="stonebeige80" width="500px" height="340">
       <img class="negro80" src="images/RXV/top80/negro80.png" alt="negro80" width="500px" height="340">
       <img class="grey80" src="images/RXV/top80/grey80.png" alt="grey80" width="500px" height="340">
       <img class="oyster80" src="images/RXV/top80/oyster80.png" alt="oyster80" width="500px" height="340">
-      <!--
-        <img class="split" src="images/RXV/windshield/split.png" alt="oyster80" width="500px" height="340">
-        <img class="tinted" src="images/RXV/windshield/tinted.png" alt="oyster80" width="500px" height="340">
-      -->      
+
+      <img class="split" src="images/RXV/windshield/split.png" alt="oyster80" width="500px" height="340">
+      <img class="tinted" src="images/RXV/windshield/tinted.png" alt="oyster80" width="500px" height="340">
+
     </div>
     <div class="caracteristicas_datos">
       <ul class="modelos">
@@ -174,4 +197,5 @@
     Desarrollador: magand07@gmail.com
   </footer>
 </body>
+
 </html>
