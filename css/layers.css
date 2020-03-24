@@ -1,0 +1,96 @@
+/***
+ * Creado por: ISC Gutierrez Mendoza Jennifer Stacie
+ * mail. magand07@gmail.com
+ * tel. 5547631372
+ */
+ 
+ /*colores carro*/
+.negro{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: -1;
+}
+.rojo{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: -1;
+}
+.blanco{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: -1;
+}
+.inf_red{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: -1;
+}
+.azul_electric{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: -1;
+}
+.almond{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: -1;
+}
+.charcoal{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: -1;
+}
+.platinum{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: -1;
+}
+.ocean_grey{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: -1;
+}
+/*tops 80in*/
+.stonebeige80,.negro80,.grey80,.oyster80{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: 1;
+}
+/*tops54in*/
+.stonebeige54,.negro54,.oyster54{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: 1;
+}
+/*asientos extra*/
+.abeige,.agrey,.anegro,.aoyster,.astonebeige{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: 2;
+}
+/*windshield*/
+.split, .tinted{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: 3;
+}
+.contenedor_imagen{
+    width: 100%;
+    height: 340px;
+    align-content: center;
+    clear: both;
+    float: left;
+}
