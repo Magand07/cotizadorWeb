@@ -1,4 +1,4 @@
-    /***
+ /***
  * Creado por: ISC Gutierrez Mendoza Jennifer Stacie
  * mail. magand07@gmail.com
  * tel. 5547631372
@@ -153,14 +153,13 @@
         list-style: none;
     }
 
-
     .caracteristicas p {
         max-width: 70%;
         color: black;
         float: right;
         margin-right: 8%;
         text-align: justify;
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
     .costo {
