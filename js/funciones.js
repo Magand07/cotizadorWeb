@@ -17,8 +17,23 @@ function setModelo(modelo){
                 document.getElementById("tabla_cotizacion").innerHTML = tabla_rxv;
                 $(".contenedor_imagen").show();
                 $("#Contenedor_slider").hide();
-            
-            } else if (modelo == "Freedom TXT") {
+                
+            } 
+            if (modelo == "Freedom TXT") {
+                    carrito.setModelo("Freedom TXT");
+                    carrito.setType("Gas");
+                    carrito.setCost();
+                    showDescription(carrito.modelo, carrito.type);
+                    stotal = carrito.cost;
+                    
+                    document.getElementById("descripcion_carrito").innerHTML = descripcion_gas_txt;
+                    document.getElementById("modelo_tipo").innerHTML = modelo+carrito.type;           
+                    document.getElementById("total").innerHTML = "Total $"+carrito.cost+" usd";
+                    document.getElementById("total_t").innerHTML = "Total $"+carrito.cost+" usd";   
+                    document.getElementById("resume").innerHTML = "La presente cotizacion"+
+                                                                " es del carro de golf "+
+                                                                carrito.modelo + "  en su versión Gas"+
+                                                                " , con las siguientes caracteristicas:";    
                 document.getElementById("botones_caracteristicas").innerHTML = "" +
                     "<ul>" +
                     inputs_adds_basics+input_colores_txt+
@@ -27,8 +42,8 @@ function setModelo(modelo){
                 document.getElementById('Contenedor_slider').innerHTML = carrousel;
                 $(".contenedor_imagen").hide();
                 $("#Contenedor_slider").show();
-            }
-            types(modelo);            
+            }  
+            types(modelo);                      
         }
     });
 }

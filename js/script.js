@@ -37,7 +37,7 @@ function calcular(costo,nombre,input,id_tabla){
         var moneda = " usd";
 
         valor = input.value;
-        alert(valor+" id tabla: "+id_tabla+" input "+input);
+        //alert(valor+" id tabla: "+id_tabla+" input "+input);
         if (valor == "false") {
           var respuesta = confirm("Cancelar "+nombre+"?");
           if (respuesta) {
@@ -76,6 +76,7 @@ function cambiarColor(clase,input){
   if(bandera == "false"){
     $("."+clase).hide();
     input.value = true;
+    $(".negro").show();
   }else{
     input.value = false;
     allColorsOff();

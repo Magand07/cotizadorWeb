@@ -6,14 +6,8 @@
 
     body {
         /*background: url("images/background.jpg");*/
-        background-color: whitesmoke;
+        background-color: white;
         background-size: cover;
-    }
-
-    .Contenedor_slider {
-        max-width: 45%;
-        max-height: 25%;
-        margin-right: 5%;
     }
 
     header img {
@@ -55,6 +49,19 @@
      border:black 2px solid; 
      border:orange 1px solid;*/
         color: orange;
+    }
+
+    .Contenedor_slider {
+        max-width: 45%;
+        max-height: 25%;
+        margin-right: 5%;
+        margin-top: 5%;
+    }
+
+    .contenedor_imagen{
+        max-width: 45%;
+        max-height: 25%;
+        
     }
 
     .boton_caract {
@@ -196,7 +203,7 @@
         padding-left: 15%;
         margin-right: 15%;
         padding: 25%;
-        font-size: 20px;
+        font-size: 15px;
         width: 100%;
     }
 
@@ -206,7 +213,8 @@
     }
 
     table td {
-        padding: 12px;
+        padding: 10px;
+        text-align: center;
     }
 
     .title2 {
