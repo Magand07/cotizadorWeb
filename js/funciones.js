@@ -28,12 +28,7 @@ function setModelo(modelo){
         }
     });
 }
-// despliega la lista de botones para los tipos de carritos para cada modelo
-/***
- * Creado por: ISC Gutierrez Mendoza Jennifer Stacie
- * mail. magand07@gmail.com
- * tel. 5547631372
- */
+
 //despliega los tipos de carro disponibles para los modelos
 function types(modelo){
     var types = "";
@@ -48,17 +43,8 @@ function types(modelo){
         "<li>"+
             "<input class='modelo_list' type='button' value='Elite' onclick='showDescription(\"Freedom RXV\",\"Elite\");'/>"+
         "</li>";
-    }/*else{
-        types = ""+
-        "<li>"+
-            "<input class='modelo_list' type='button' value='Gas' onclick='showDescription(\"Freedom TXT\",\"Gas\");'/>"+
-        "</li>"+
-        "<li>"+
-            "<input class='modelo_list' type='button' value='Electrico' onclick='showDescription(\"Freedom TXT\",\"Electrico\");'/>"+
-        "</li>";
-    }*/
+    }
     document.getElementById('types').innerHTML = types;
-
 }
 
 // despliega la descripcion del modelo y tipo
@@ -120,4 +106,3 @@ function CT_tabla(medida){
         }
     });    
 }
- 

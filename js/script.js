@@ -32,6 +32,18 @@ function calcular(costo,nombre,input,id_tabla){
     });
   }
 
+function cambiar(clase,input){
+  alert(clase);
+  var bandera = input.value;
+  if(bandera == "false"){
+    $("."+clase).hide();
+    input.value = true;
+  }else{
+    input.value = false;
+    $("."+clase).show();
+  }
+}
+
 // from bootstrap
 function cambiarFoto(num){
     $('.carousel').carousel(num);
@@ -48,4 +60,54 @@ function llenarTablaColor(color){
 // borra el contenido de la pagina recargandola
 function borrarCot(){
     location.reload();    
+}
+// oculta todas las imagenes de inicio
+function firstLoad(){
+  $(".negro").show();
+  $(".rojo").hide();
+  $(".blanco").hide();
+  $(".inf_red").hide();
+  $(".azul_electric").hide();
+  $(".almond").hide();
+  $(".charcoal").hide();
+  $(".platinum").hide();
+  $(".ocean_grey").hide();
+  $(".abeige").hide();
+  $(".agrey").hide();
+  $(".anegro").hide();
+  $(".aoyster").hide();
+  $(".astonebeige").hide();
+  $(".astonebeige").hide();
+  $(".stonebeige54").hide();
+  $(".negro54").hide();
+  $(".oyster54").hide();
+  $(".stonebeige80").hide();
+  $(".negro80").hide();
+  $(".grey80").hide();
+  $(".oyster80").hide();  
+}
+// all off
+function allOff(){
+  $(".negro").hide();
+  $(".rojo").hide();
+  $(".blanco").hide();
+  $(".inf_red").hide();
+  $(".azul_electric").hide();
+  $(".almond").hide();
+  $(".charcoal").hide();
+  $(".platinum").hide();
+  $(".ocean_grey").hide();
+  $(".abeige").hide();
+  $(".agrey").hide();
+  $(".anegro").hide();
+  $(".aoyster").hide();
+  $(".astonebeige").hide();
+  $(".astonebeige").hide();
+  $(".stonebeige54").hide();
+  $(".negro54").hide();
+  $(".oyster54").hide();
+  $(".stonebeige80").hide();
+  $(".negro80").hide();
+  $(".grey80").hide();
+  $(".oyster80").hide();  
 }

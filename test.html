@@ -1,13 +1,28 @@
 <html>
 <link rel="stylesheet" href="css/panel_caracteristicas.css">
 <link rel="stylesheet" href="css/colores.css">
+<link rel="stylesheet" href="css/test.css">
 <script src="js/jquery-3.4.1.min.js"></script>
 <script type='text/javascript' src="js/script.js"></script>
-
+<title>Test</title>
 <body>
-  <input type="hidden" id="hielera" value="true"/>
+    <input type="button" value="agregar" onclick="agregar('abeige');">
+    <div class="contenedor_imagen">
+        <img src="images/RXV/asientos extra/abeige.png" class="abeige" width="500" height="340"/>
+        <img src="images/RXV/colores/almond.png" class="almond" width="500" height="340"/>
+    </div>
+<script>
+    function agregar(clase){
+        $("."+clase).hide();// en donde la instruccion sea retirar
+       // $("."+clase).show();// en donde la instruccion sea agregar
+    }
+</script>
+
+  <!--input type="hidden" id="hielera" value="true"/>
   <script>
     let total = 5045;
+    total = Math.round(20.49);
+    document.write(total);
   </script>
   <input id="hielera_button" type="button" value="hielera" onclick="calcular(15,'hielera',getElementById('hielera'));"/>
   <div id="total">
@@ -17,6 +32,7 @@
   <input type="button" class="c_stone_beige" />
   <input type="button" class="c_negro" />
   <input type="button" class="c_oyster" />
+  -->
   <!--p id="demo"></p>
     <input type="button" value="hi" onclick="attemp();">
     <script type='text/javascript' src="js/carrito.js"></script>

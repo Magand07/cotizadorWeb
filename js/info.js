@@ -40,7 +40,8 @@ let input_colores_txt = "<li><input class='c_negro' type='button' name='Negro' i
     " onclick='cambiarFoto(4);llenarTablaColor(\"Blanco\");'>" +
     "</li>";
 
-let inputs_adds_basics = "<li><input type='button' value='Asientos extra (2) $1,558' onclick='calcular(1558,\"Asientos extra\",getElementById(\"asientos_extra\"),\"ae_t\");llenarTabla(\"ae_t\",\"Si\");'>" +
+let inputs_adds_basics = ""+
+    "<li><input type='button' value='Asientos extra (2) $1,558' onclick='calcular(1558,\"Asientos extra\",getElementById(\"asientos_extra\"),\"ae_t\");llenarTabla(\"ae_t\",\"Si\");'>" +
     "</li>" +
     "<li><input type='button' value='Rines $727.3' onclick='calcular(727.3,\"Rines\",getElementById(\"rines\"));cambiarFoto(9,\"r_t\");llenarTabla(\"r_t\",\"Si\");'>" +
     "</li>" +
@@ -98,13 +99,15 @@ let input_adds_rxv = "<li>" +
     "<input type='button' value='Top 54\" $271' onclick='calcular(271,\"Top 54in\",getElementById(\"top54\"),\"tp_t\");llenarTabla(\"tp_t\",\"54\");CT_tabla(\"54\");'>" +
     "</li>";
 
-let colores_top_80 = '<input type="button" class="c_stone_beige" />' +
-    '<input type="button" class="c_negro" />' +
-    '<input type="button" class="c_grey" />' +
-    '<input type="button" class="c_oyster" />';
-let colores_top_54 = '<input type="button" class="c_stone_beige" />' +
-    '<input type="button" class="c_negro" />' +
-    '<input type="button" class="c_oyster" />';
+let colores_top_80 = ''+
+    '<input type="button" onclick="cambiar(\'stonebeige80\');" class="c_stone_beige" />' +
+    '<input type="button" onclick="cambiar(\'negro80\');" class="c_negro" />' +
+    '<input type="button" onclick="cambiar(\'grey80\');" class="c_grey" />' +
+    '<input type="button" onclick="cambiar(\'oyster80\');" class="c_oyster" />';
+let colores_top_54 = ''+
+    '<input type="button" onclick="cambiar(\'stonebeige54\');class="c_stone_beige" />' +
+    '<input type="button" onclick="cambiar(\'negro54\');class="c_negro" />' +
+    '<input type="button" onclick="cambiar(\'oyster54\');class="c_oyster" />';
 
 
 let tabla_rxv = '<tr>' +
@@ -144,7 +147,7 @@ let tabla_rxv = '<tr>' +
     '</td>' +
     '<td name="tp_t" id="tp_t" class="f2">' +
     '</td>' +
-    '<td name="tpc_t" id="tpc_t" >' +
+    '<td name="tpc_t" id="tpc_t" >' +// este se modifica con eventos
     '</td>' +
     '</tr>';
 

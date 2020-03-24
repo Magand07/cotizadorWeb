@@ -1,3 +1,9 @@
+/***
+ * Creado por: ISC Gutierrez Mendoza Jennifer Stacie
+ * mail. magand07@gmail.com
+ * tel. 5547631372
+ */
+/*Colores de carros*/
 .c_negro {
     background: black;
 }
@@ -14,10 +20,6 @@
     background: rgb(129, 23, 13);
 }
 
-.c_inf_red {
-    background: rgb(129, 23, 13);
-}
-    
 .c_azul_electric{
     background: rgb(26,42,87);
 }
