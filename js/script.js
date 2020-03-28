@@ -4,105 +4,95 @@
  * tel. 5547631372
  */
 //WIP Help!
-function sumarTopColor(cantidad,input){
-  $.ajax({
-    type: "GET",
-    url: 'test.html',
-    data: "id=total_cost",
-    success: function (data) {            
+function sumarTopColor(cantidad, input) {
       var msg = "Total $";
       var moneda = " usd";
 
       valor = input.value;
       //alert(valor+" id tabla: "+id_tabla);
       if (valor == "true") {
-          input.value = false;
-          stotal = stotal + costo;     
+        input.value = false;
+        stotal = stotal + costo;
       } else {
         input.value = true;
         stotal = stotal - costo;
       }
-      document.getElementById("total").innerHTML = msg+stotal+moneda;
-      document.getElementById("total_t").innerHTML = msg+stotal+moneda;
-    }
-  });
+      document.getElementById("total").innerHTML = msg + stotal + moneda;
+      document.getElementById("total_t").innerHTML = msg + stotal + moneda;
+    
 }
-function calcular(costo,nombre,input,id_tabla){
-    $.ajax({
-      type: "GET",
-      url: 'test.html',
-      data: "id=total_cost",
-      success: function (data) {            
-        var msg = "Total $";
-        var moneda = " usd";
+function calcular(costo, nombre, input, id_tabla) {// este sera un problema
 
-        valor = input.value;
-        //alert(valor+" id tabla: "+id_tabla+" input "+input);
-        if (valor == "false") {
-          var respuesta = confirm("Cancelar "+nombre+"?");
-          if (respuesta) {
-            input.value = true;
-            stotal = stotal - costo;
-            // cancela el costo en la tabla 
-            document.getElementById(id_tabla).innerHTML = "";
-          }
-        } else {
-          input.value = false;
-          stotal = stotal + costo;
-        }
-        document.getElementById("total").innerHTML = msg+stotal+moneda;
-        document.getElementById("total_t").innerHTML = msg+stotal+moneda;
-      }
-    });
+  var msg = "Total $";
+  var moneda = " usd";
+
+  valor = input.value;
+  //alert(valor+" id tabla: "+id_tabla+" input "+input);
+  if (valor == "false") {
+    var respuesta = confirm("Cancelar " + nombre + "?");
+    if (respuesta) {
+      input.value = true;
+      stotal = stotal - costo;
+      // cancela el costo en la tabla 
+      document.getElementById(id_tabla).innerHTML = "";
+    }
+  } else {
+    input.value = false;
+    stotal = stotal + costo;
   }
+  moneda = Math.round(moneda);
+  document.getElementById("total").innerHTML = msg + stotal + moneda;
+  document.getElementById("total_t").innerHTML = msg + stotal + moneda;
+
+}
 
 // activar o desactivar la imagen de clase
-function cambiar(clase,input){
+function cambiar(clase, input) {
   //alert(clase+" -> "+input.value);
   var bandera = input.value;
-  if(bandera == "false"){
-    $("."+clase).hide();
+  if (bandera == "false") {
+    $("." + clase).hide();
     input.value = true;
-  }else{
+  } else {
     input.value = false;
-    $("."+clase).show();
+    $("." + clase).show();
   }
 }
 
 // cambia el color del carrito 
-function cambiarColor(clase,input){
+function cambiarColor(clase, input) {
   //alert(clase+" -> "+input.value);
   var bandera = input.value;
-  if(bandera == "false"){
-    $("."+clase).hide();
+  if (bandera == "false") {
+    $("." + clase).hide();
     input.value = true;
     $(".negro").show();
-  }else{
+  } else {
     input.value = false;
     allColorsOff();
-    $("."+clase).show();
+    $("." + clase).show();
   }
 }
 
 // from bootstrap
-function cambiarFoto(num){
-    $('.carousel').carousel(num);
-    $('.carousel').carousel('pause');     
+function cambiarFoto(num) {
+  $('.carousel').carousel(num);
+  $('.carousel').carousel('pause');
 }
 
-function llenarTabla(posicion,valor){
-    document.getElementById(posicion).innerHTML = valor;
+function llenarTabla(posicion, valor) {
+  document.getElementById(posicion).innerHTML = valor;
 }
 // se podria eliminar...
-function llenarTablaColor(color){
-    document.getElementById('c_t').innerHTML = color;
+function llenarTablaColor(color) {
+  document.getElementById('c_t').innerHTML = color;
 }
 // borra el contenido de la pagina recargandola
-function borrarCot(){
-    location.reload();    
+function borrarCot() {
+  location.reload();
 }
 // oculta todas las imagenes de inicio
-function firstLoad(){
+function firstLoad() {
   $(".negro").hide();
   $(".rojo").show();
   $(".blanco").hide();
@@ -124,12 +114,12 @@ function firstLoad(){
   $(".stonebeige80").hide();
   $(".negro80").hide();
   $(".grey80").hide();
-  $(".oyster80").hide();  
-  $(".split").hide();  
-  $(".tinted").hide();    
+  $(".oyster80").hide();
+  $(".split").hide();
+  $(".tinted").hide();
 }
 // all off
-function allOff(){
+function allOff() {
   $(".negro").hide();
   $(".rojo").hide();
   $(".blanco").hide();
@@ -151,13 +141,13 @@ function allOff(){
   $(".stonebeige80").hide();
   $(".negro80").hide();
   $(".grey80").hide();
-  $(".oyster80").hide();  
-  $(".split").hide();  
-  $(".tinted").hide();  
+  $(".oyster80").hide();
+  $(".split").hide();
+  $(".tinted").hide();
 }
 
 // dejar todas los colores en off
-function allColorsOff(){
+function allColorsOff() {
   $(".negro").hide();
   $(".rojo").hide();
   $(".blanco").hide();

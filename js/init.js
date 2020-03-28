@@ -7,6 +7,4 @@ carrito = new Carro();
 carrito.setModelo("Freedom TXT");
 carrito.setType("Gas");
 carrito.setCost();
-setModelo("Freedom TXT");
-showDescription(carrito.modelo, carrito.type);
 var stotal = carrito.cost;

@@ -3,43 +3,33 @@
  * mail. magand07@gmail.com
  * tel. 5547631372
  */
+
+setModelo("Freedom TXT");
+showDescription(carrito.modelo, carrito.type);
+
 function setModelo(modelo) {
     if (modelo == "Freedom RXV") {
         document.getElementById("botones_caracteristicas").innerHTML = "" +
             "<ul>" +
             inputs_adds_basics + input_adds_rxv + input_colores_rxv +
-            "</ul>";
-        document.getElementById("tabla_cotizacion").innerHTML = tabla_rxv;
+            "</ul>";        
         $(".contenedor_imagen").show();
         $("#Contenedor_slider").hide();
-
+        $("#tabla_cotizacion_txt").hide();
+        $("#tabla_cotizacion_rxv").show();
     }
     if (modelo == "Freedom TXT") {
-        carrito.setModelo("Freedom TXT");
-        carrito.setType("Gas");
-        carrito.setCost();
-        showDescription(carrito.modelo, carrito.type);
-        stotal = carrito.cost;
-
-        document.getElementById("descripcion_carrito").innerHTML = descripcion_gas_txt;
-        document.getElementById("modelo_tipo").innerHTML = modelo + carrito.type;
-        document.getElementById("total").innerHTML = "Total $" + carrito.cost + " usd";
-        document.getElementById("total_t").innerHTML = "Total $" + carrito.cost + " usd";
-        document.getElementById("resume").innerHTML = "La presente cotizacion" +
-            " es del carro de golf " +
-            carrito.modelo + "  en su versión Gas" +
-            " , con las siguientes caracteristicas:";
         document.getElementById("botones_caracteristicas").innerHTML = "" +
             "<ul>" +
             inputs_adds_basics + input_colores_txt +
-            "</ul>";
-        document.getElementById("tabla_cotizacion").innerHTML = tabla_txt;
-        document.getElementById('Contenedor_slider').innerHTML = carrousel;
-        $(".contenedor_imagen").hide();
-        $("#Contenedor_slider").show();
+            "</ul>"; 
+            $("#Contenedor_slider").show();
+            $(".contenedor_imagen").hide();
+            $("#tabla_cotizacion_txt").show();
+            $("#tabla_cotizacion_rxv").hide();
+            showDescription("Freedom TXT", "GAS");
     }
     types(modelo);
-
 }
 
 //despliega los tipos de carro disponibles para los modelos
@@ -57,8 +47,6 @@ function types(modelo) {
             "<input class='modelo_list' type='button' value='Elite' onclick='showDescription(\"Freedom RXV\",\"Elite\");'/>" +
             "</li>";
     }
-    carrito.setCost();
-    stotal = carrito.cost;
     document.getElementById('types').innerHTML = types;
 }
 
@@ -66,38 +54,51 @@ function types(modelo) {
 function showDescription(modelo, type) {
 
     var desc = "";
+    var resume = "";
     carrito.setModelo(modelo);
     carrito.setType(type);
     carrito.setCost();
     stotal = carrito.cost;
-    switch (type) {
-        case "Elite":
-            desc = descripcion_elite_rxv + carrito.cost;
-            break;
-        case "Gas":
-            if (modelo == "Freedom TXT") {
-                desc = descripcion_gas_txt;
-            } else {
-                desc = descripcion_gas_rxv;
-            }
-            break;
-        case "Electrico":
-            if (modelo == "Freedom TXT") {
-                desc = descripcion_gas_txt;
-            } else {
-                desc = descripcion_electrico_rxv;
-            }
-            break;
+    if(modelo == "Freedom TXT"){
+        
+        desc = descripcion_gas_txt;
+        
+        //document.getElementById("total").innerHTML = "Total $" + carrito.cost + " usd";
+        //document.getElementById("total_t").innerHTML = "Total $" + carrito.cost + " usd";
+        //document.getElementById("resume").innerHTML = 
+        resume = "La presente cotizacion es del carro de golf "+ carrito.modelo + "  en su versión Gas, con las siguientes caracteristicas:";
+        //document.getElementById("botones_caracteristicas").innerHTML = "" +
+        //    "<ul>" +
+        //    inputs_adds_basics + input_colores_txt +
+        //    "</ul>";
+    }else{
+        switch (type) {
+            case "Elite":
+                desc = descripcion_elite_rxv + carrito.cost;
+                break;
+            case "Gas":
+                if (modelo == "Freedom TXT") {
+                    desc = descripcion_gas_txt;
+                } else {
+                    desc = descripcion_gas_rxv;
+                }
+                break;
+            case "Electrico":
+                if (modelo == "Freedom TXT") {
+                    desc = descripcion_gas_txt;
+                } else {
+                    desc = descripcion_electrico_rxv;
+                }
+                break;
+        }
+        resume= "La presente cotizacion es del carro de golf " +carrito.modelo + " en su versión " +carrito.type+", con las siguientes caracteristicas:";
     }
-    document.getElementById("descripcion_carrito").innerHTML = desc;
-    document.getElementById("modelo_tipo").innerHTML = modelo + " " + type;
+
+    document.getElementById("descripcion_carrito").innerHTML = desc; // descripcion caracteristicas
+    document.getElementById("resume").innerHTML = resume; // lore tabla
+    document.getElementById("modelo_tipo").innerHTML = modelo + " " + type;// title
     document.getElementById("total").innerHTML = "Total $" + carrito.cost + " usd";
     document.getElementById("total_t").innerHTML = "Total $" + carrito.cost + " usd";
-    document.getElementById("resume").innerHTML = "La presente cotizacion" +
-        " es del carro de golf " +
-        carrito.modelo + "  en su versión " +
-        carrito.type +
-        " , con las siguientes caracteristicas:";
 
 }
 // muestra los colores disponibles para el asiento extra
