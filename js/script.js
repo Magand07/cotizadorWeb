@@ -22,28 +22,39 @@ function sumarTopColor(cantidad, input) {
     
 }
 function calcular(costo, nombre, input, id_tabla) {// este sera un problema
-
+// Top54in Top80in wind_split
   var msg = "Total $";
   var moneda = " usd";
 
   valor = input.value;
   //alert(valor+" id tabla: "+id_tabla+" input "+input);
-  if (valor == "false") {
-    var respuesta = confirm("Cancelar " + nombre + "?");
-    if (respuesta) {
-      input.value = true;
-      stotal = stotal - costo;
-      // cancela el costo en la tabla 
-      document.getElementById(id_tabla).innerHTML = "";
+  if(nombre == "WindShield Tinted" || nombre == "WindShield Split"){
+    //alert(nombre+"\n"+document.getElementById("top_80").value+"\n"+document.getElementById("top_54").value);
+    if(document.getElementById("top_80").value == "true" && document.getElementById("top_54").value == "true"){
+      alert("Seleccione primero un Top");
+      // no cambiar el top 
+      document.getElementById("split").value = true;
+      document.getElementById("tinted").value = true;
+      llenarTabla("w_t","");
+      $(".split").hide();
+      $(".tinted").hide();
     }
-  } else {
-    input.value = false;
-    stotal = stotal + costo;
-  }
-  moneda = Math.round(moneda);
+  }else{
+    if (valor == "false") {
+      var respuesta = confirm("Cancelar " + nombre + "?");
+      if (respuesta) {
+        input.value = true;
+        stotal = stotal - costo;
+        // cancela el costo en la tabla 
+        document.getElementById(id_tabla).innerHTML = "";
+      }
+    } else {
+      input.value = false;
+      stotal = stotal + costo;
+    }  
+  } 
   document.getElementById("total").innerHTML = msg + stotal + moneda;
   document.getElementById("total_t").innerHTML = msg + stotal + moneda;
-
 }
 
 // activar o desactivar la imagen de clase
@@ -157,4 +168,20 @@ function allColorsOff() {
   $(".charcoal").hide();
   $(".platinum").hide();
   $(".ocean_grey").hide();
+}
+function resetFlags(){
+document.getElementById("asientos_extra").value = true;
+document.getElementById("rines").value = true;
+document.getElementById("sonido").value = true;
+document.getElementById("hielera_izq").value = true;
+document.getElementById("hielera_der").value = true;
+document.getElementById("leds").value = true;
+document.getElementById("turn_signal").value = true;
+document.getElementById("guantes_conductor").value = true;
+document.getElementById("guantes_pasajero").value = true;
+document.getElementById("guantes_ambos").value = true;
+document.getElementById("top_80").value = true;
+document.getElementById("top_54").value = true;
+document.getElementById("wind_split").value = true;
+document.getElementById("wind_tinted").value = true;
 }

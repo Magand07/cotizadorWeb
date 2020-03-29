@@ -92,10 +92,10 @@ let input_adds_rxv = "<li>" +
     "<input type='button' value='Top 54in $271' onclick='calcular(271,\"Top54in\",getElementById(\"top_54\"),\"tp_t\");llenarTabla(\"tp_t\",\"54\");CT_tabla(\"54\");'>" +
     "</li>"+
     "<li>" +
-    "<input type='button' value='Windshield Split $156' onclick='cambiar(\"split\",getElementById(\"split\"));calcular(156,\"wind_split\",getElementById(\"wind_split\"),\"w_t\");llenarTabla(\"w_t\",\"Split\");'>" +
+    "<input type='button' value='Windshield Split $156' onclick='llenarTabla(\"w_t\",\"Split\");cambiar(\"split\",getElementById(\"split\"));calcular(156,\"WindShield Split\",getElementById(\"wind_split\"),\"w_t\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='WindShield Tinted $195.82' onclick='cambiar(\"tinted\",getElementById(\"tinted\"));calcular(195.82,\"wind_tinted\",getElementById(\"wind_tinted\"),\"w_t\");llenarTabla(\"w_t\",\"Tinted\");'>" +
+    "<input type='button' value='WindShield Tinted $195.82' onclick='cambiar(\"tinted\",getElementById(\"tinted\"));llenarTabla(\"w_t\",\"Tinted\");calcular(195.82,\"WindShield Tinted\",getElementById(\"wind_tinted\"),\"w_t\");'>" +
     "</li>" ;
 
 let colores_top_80 = '' +

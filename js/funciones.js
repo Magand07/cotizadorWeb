@@ -3,11 +3,11 @@
  * mail. magand07@gmail.com
  * tel. 5547631372
  */
-
 setModelo("Freedom TXT");
 showDescription(carrito.modelo, carrito.type);
 
 function setModelo(modelo) {
+    resetFlags();
     if (modelo == "Freedom RXV") {
         document.getElementById("botones_caracteristicas").innerHTML = "" +
             "<ul>" +
