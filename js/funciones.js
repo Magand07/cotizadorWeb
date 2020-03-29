@@ -10,9 +10,8 @@ function setModelo(modelo) {
     resetFlags();
     if (modelo == "Freedom RXV") {
         document.getElementById("botones_caracteristicas").innerHTML = "" +
-            "<ul>" +
-            inputs_adds_basics + input_adds_rxv + input_colores_rxv +
-            "</ul>";        
+        "<ul>"+ inputs_adds_basics + input_adds_rxv +"<ul>";
+        document.getElementById("colores").innerHTML = "<h5>Color:</h5>"+input_colores_rxv;
         $(".contenedor_imagen").show();
         $("#Contenedor_slider").hide();
         $("#tabla_cotizacion_txt").hide();
@@ -20,9 +19,8 @@ function setModelo(modelo) {
     }
     if (modelo == "Freedom TXT") {
         document.getElementById("botones_caracteristicas").innerHTML = "" +
-            "<ul>" +
-            inputs_adds_basics + input_colores_txt +
-            "</ul>"; 
+        "<ul>"+inputs_adds_basics +"</ul>";
+        document.getElementById("colores").innerHTML = "<h5>Color:</h5>"+input_colores_txt;
             $("#Contenedor_slider").show();
             $(".contenedor_imagen").hide();
             $("#tabla_cotizacion_txt").show();
