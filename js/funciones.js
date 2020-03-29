@@ -9,10 +9,13 @@ showDescription(carrito.modelo, carrito.type);
 function setModelo(modelo) {
     resetFlags();
     resetTable();
+    $("#colores_top").hide();
+    $("#colores_asientos").hide();
     if (modelo == "Freedom RXV") {
+        $(".rojo").show();
         document.getElementById("botones_caracteristicas").innerHTML = "" +
-            "<ul>" + inputs_adds_basics + input_adds_rxv + "<ul>";
-        document.getElementById("colores").innerHTML = "<h5>Color:</h5>" + input_colores_rxv;
+            "<ul>" + input_adds_rxv + "<ul>";
+        document.getElementById("colores").innerHTML = input_colores_rxv;
         $(".contenedor_imagen").show();
         $("#Contenedor_slider").hide();
         $("#tabla_cotizacion_txt").hide();
@@ -21,7 +24,7 @@ function setModelo(modelo) {
     if (modelo == "Freedom TXT") {
         document.getElementById("botones_caracteristicas").innerHTML = "" +
             "<ul>" + inputs_adds_basics + "</ul>";
-        document.getElementById("colores").innerHTML = "<h5>Color:</h5>" + input_colores_txt;
+        document.getElementById("colores").innerHTML = input_colores_txt;
         $("#Contenedor_slider").show();
         $(".contenedor_imagen").hide();
         $("#tabla_cotizacion_txt").show();

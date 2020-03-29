@@ -35,6 +35,7 @@ function calcular(costo, nombre, input, id_tabla) {// este sera un problema
           stotal = stotal - costo;
           // cancela el costo en la tabla 
           document.getElementById(id_tabla).innerHTML = "";
+          // aqui resetear las imagenes
         }
       } else {
         input.value = false;
@@ -86,6 +87,7 @@ function llenarTabla(posicion, valor) {
 }
 // se podria eliminar...
 function llenarTablaColor(color) {
+  alert(color);
   document.getElementById('c_t').innerHTML = color;
 }
 // borra el contenido de la pagina recargandola
