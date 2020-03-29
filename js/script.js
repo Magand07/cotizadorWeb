@@ -21,29 +21,30 @@ function sumarTopColor(cantidad, input) {
   document.getElementById("total_t").innerHTML = msg + stotal + moneda;
 
 }
-function calcular(costo, nombre, input, id_tabla) {// este sera un problema
-  // Top54in Top80in wind_split
-  var msg = "Total $";
-  var moneda = " usd";
-
-  valor = input.value;
+function calcular(costo, nombre, input, id_tabla) {// este sera un problema 
   //alert(valor+" id tabla: "+id_tabla+" input "+input);
-  checkWindShield(nombre);
-  if (valor == "false") {
-    var respuesta = confirm("Cancelar " + nombre + "?");
-    if (respuesta) {
-      input.value = true;
-      stotal = stotal - costo;
-      // cancela el costo en la tabla 
-      document.getElementById(id_tabla).innerHTML = "";
-    }
-  } else {
-    input.value = false;
-    stotal = stotal + costo;
-  }
+  if (noDoubleItem(nombre) != 1) {
+    if (checkWindShield(nombre) != 1) {
+      var msg = "Total $";
+      var moneda = " usd";
+      valor = input.value;
+      if (valor == "false") {
+        var respuesta = confirm("Cancelar " + nombre + "?");
+        if (respuesta) {
+          input.value = true;
+          stotal = stotal - costo;
+          // cancela el costo en la tabla 
+          document.getElementById(id_tabla).innerHTML = "";
+        }
+      } else {
+        input.value = false;
+        stotal = stotal + costo;
+      }
+      document.getElementById("total").innerHTML = msg + stotal + moneda;
+      document.getElementById("total_t").innerHTML = msg + stotal + moneda;
 
-  document.getElementById("total").innerHTML = msg + stotal + moneda;
-  document.getElementById("total_t").innerHTML = msg + stotal + moneda;
+    }
+  }
 }
 
 // activar o desactivar la imagen de clase
@@ -145,7 +146,6 @@ function allOff() {
   $(".split").hide();
   $(".tinted").hide();
 }
-
 // dejar todas los colores en off
 function allColorsOff() {
   $(".negro").hide();
@@ -174,6 +174,7 @@ function resetFlags() {
   document.getElementById("wind_split").value = true;
   document.getElementById("wind_tinted").value = true;
 }
+
 // checa que primero se escoja un Top
 function checkWindShield(nombre) {
   if (nombre == "WindShield Tinted" || nombre == "WindShield Split") {
@@ -185,25 +186,44 @@ function checkWindShield(nombre) {
       llenarTabla("w_t", "");
       $(".split").hide();
       $(".tinted").hide();
+      return 1;
     }
+    return 0;
   }
+  return 0;
 }
+
 //Checa no elegir doble WindShield o doble top
-function noDoubleItem(item,id_ex,item_ex){
+function noDoubleItem(item) {
   //alert(document.getElementById(id_ex).value);
   var msg = "Cancele primero el ";
-  if(item == "windshield"){
-    msg = msg + item +" ";
-    if(document.getElementById(id_ex).value=="false"){
-      msg = msg + " "+item_ex;
+  if (item == "WindShield Split") {
+    if (document.getElementById("wind_tinted").value == "false") {
+      msg = msg + "WindShield Tinted";
       alert(msg);
+      return 1;
     }
   }
-  if(item == "top"){
-    msg = msg + item +" ";
-    if(document.getElementById(i.valued_ex)=="false"){
-      msg = msg + " "+item_ex;
+  if (item == "WindShield Tinted") {
+    if (document.getElementById("wind_split").value == "false") {
+      msg = msg + "WindShield Split";
       alert(msg);
+      return 1;
     }
   }
+  if (item == "Top80in") {
+    if (document.getElementById("top_54").value == "false") {
+      msg = msg + "Top 54in";
+      alert(msg);
+      return 1;
+    }
+  }
+  if (item == "Top54in") {
+    if (document.getElementById("top_80").value == "false") {
+      msg = msg + "Top 80in";
+      alert(msg);
+      return 1;
+    }
+  }
+  return 0;
 }
