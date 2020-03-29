@@ -170,7 +170,6 @@
 
  .square {
      list-style: none;
-     
      display: flex;
      box-sizing: content-box;
  }
@@ -179,6 +178,26 @@
      width: 45px;
      height: 45px;
      border-radius: 20px;
+ }
+
+ #colores_asientos {
+     width: 100%;
+     float: right;
+ }
+
+ #colores_top {
+     width: 100%;
+     float: right;
+ }
+
+ #colores_asientos input {
+     width: 50px;
+     border-radius: 10px;
+ }
+
+ #colores_top input {
+     width: 50px;
+     border-radius: 10px;
  }
 
  .caracteristicas p {

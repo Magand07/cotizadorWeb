@@ -103,19 +103,19 @@ let input_adds_rxv = "<li>" +
     "</li>";
 
 let colores_top_80 = '' +
-    '<input type="button" title="color stone beige" onclick="cambiar(\'stonebeige80\',getElementById(\'stonebeige80\'));" class="c_stone_beige" />' +
-    '<input type="button" title="color negro" onclick="cambiar(\'negro80\',getElementById(\'negro80\'));" class="c_negro" />' +
-    '<input type="button" title="color grey" onclick="cambiar(\'grey80\',getElementById(\'grey80\'));" class="c_grey" />' +
-    '<input type="button" title="color oyster" onclick="cambiar(\'oyster80\',getElementById(\'oyster80\'));" class="c_oyster" />';
+    '<input type="button" title="stone beige" onclick="llenarTabla(\'tpc_t\',\'StoneBeige\');cambiar(\'stonebeige80\',getElementById(\'stonebeige80\'));" class="c_stone_beige" />' +
+    '<input type="button" title="negro" onclick="llenarTabla(\'tpc_t\',\'Negro\');cambiar(\'negro80\',getElementById(\'negro80\'));" class="c_negro" />' +
+    '<input type="button" title="grey" onclick="llenarTabla(\'tpc_t\',\'Grey\');cambiar(\'grey80\',getElementById(\'grey80\'));" class="c_grey" />' +
+    '<input type="button" title="oyster" onclick="llenarTabla(\'tpc_t\',\'Oyster\');cambiar(\'oyster80\',getElementById(\'oyster80\'));" class="c_oyster" />';
 
 let colores_top_54 = '' +
-    '<input type="button" title="color stonebeige" onclick="cambiar(\'stonebeige54\',getElementById(\'stonebeige54\'));" class="c_stone_beige" />' +
-    '<input type="button" title="color negro" onclick="cambiar(\'negro54\',getElementById(\'negro54\'));" class="c_negro" />' +
-    '<input type="button" title="color oyster" onclick="cambiar(\'oyster54\',getElementById(\'oyster54\'));" class="c_oyster" />';
+    '<input type="button" title="stonebeige" onclick="llenarTabla(\'tpc_t\',\'Stonebeige\');cambiar(\'stonebeige54\',getElementById(\'stonebeige54\'));" class="c_stone_beige" />' +
+    '<input type="button" title="negro" onclick="llenarTabla(\'tpc_t\',\'Negro\');cambiar(\'negro54\',getElementById(\'negro54\'));" class="c_negro" />' +
+    '<input type="button" title="oyster" onclick="llenarTabla(\'tpc_t\',\'Oyster\');cambiar(\'oyster54\',getElementById(\'oyster54\'));" class="c_oyster" />';
 
 let colores_asientos = '' +
-    '<input type="button" title="color beige" onclick="cambiar(\'abeige\',getElementById(\'abeige\'));" class="c_beige" />' +
-    '<input type="button" title="color grey" onclick="cambiar(\'agrey\',getElementById(\'agrey\'));" class="c_grey" />' +
-    '<input type="button" title="color negro" onclick="cambiar(\'anegro\',getElementById(\'anegro\'));" class="c_negro" />' +
-    '<input type="button" title="color oyster" onclick="cambiar(\'aoyster\',getElementById(\'aoyster\'));" class="c_oyster" />' +
-    '<input type="button" title="color stonebeige" onclick="cambiar(\'astonebeige\',getElementById(\'astonebeige\'));" class="c_stone_beige" />';
+    '<input type="button" title="beige" onclick="llenarTabla(\'tpc_t\',\'Beige\');cambiar(\'abeige\',getElementById(\'abeige\'));" class="c_beige" />' +
+    '<input type="button" title="grey" onclick="llenarTabla(\'tpc_t\',\'Grey\');cambiar(\'agrey\',getElementById(\'agrey\'));" class="c_grey" />' +
+    '<input type="button" title="negro" onclick="llenarTabla(\'tpc_t\',\'Negro\');cambiar(\'anegro\',getElementById(\'anegro\'));" class="c_negro" />' +
+    '<input type="button" title="oyster" onclick="llenarTabla(\'tpc_t\',\'Oyster\');cambiar(\'aoyster\',getElementById(\'aoyster\'));" class="c_oyster" />' +
+    '<input type="button" title="stonebeige" onclick="llenarTabla(\'tpc_t\',\'StoneBeige\');cambiar(\'astonebeige\',getElementById(\'astonebeige\'));" class="c_stone_beige" />';

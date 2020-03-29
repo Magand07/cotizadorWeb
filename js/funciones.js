@@ -101,8 +101,8 @@ function showDescription(modelo, type) {
 }
 // muestra los colores disponibles para el asiento extra
 function coloresAsientos() {
-    document.getElementById("ae_t").innerHTML = colores_asientos;// ahora faltara una funcion que los borre
-
+    document.getElementById("colores_asientos").innerHTML = "Color asiento extra: "+colores_asientos;// ahora faltara una funcion que los borre
+    $("#colores_asientos").show();
 }
 // muestra los colores de acuerdo al tamaño de top
 function CT_tabla(medida) {
@@ -112,6 +112,6 @@ function CT_tabla(medida) {
     } else if (medida == 54) {
         colores_top = colores_top_54;
     }
-    document.getElementById("tpc_t").innerHTML = colores_top;
-
+    document.getElementById("colores_top").innerHTML = "Color Top: "+colores_top;
+    $("#colores_top").show();
 }
