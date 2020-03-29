@@ -8,10 +8,11 @@ showDescription(carrito.modelo, carrito.type);
 
 function setModelo(modelo) {
     resetFlags();
+    resetTable();
     if (modelo == "Freedom RXV") {
         document.getElementById("botones_caracteristicas").innerHTML = "" +
-        "<ul>"+ inputs_adds_basics + input_adds_rxv +"<ul>";
-        document.getElementById("colores").innerHTML = "<h5>Color:</h5>"+input_colores_rxv;
+            "<ul>" + inputs_adds_basics + input_adds_rxv + "<ul>";
+        document.getElementById("colores").innerHTML = "<h5>Color:</h5>" + input_colores_rxv;
         $(".contenedor_imagen").show();
         $("#Contenedor_slider").hide();
         $("#tabla_cotizacion_txt").hide();
@@ -19,13 +20,13 @@ function setModelo(modelo) {
     }
     if (modelo == "Freedom TXT") {
         document.getElementById("botones_caracteristicas").innerHTML = "" +
-        "<ul>"+inputs_adds_basics +"</ul>";
-        document.getElementById("colores").innerHTML = "<h5>Color:</h5>"+input_colores_txt;
-            $("#Contenedor_slider").show();
-            $(".contenedor_imagen").hide();
-            $("#tabla_cotizacion_txt").show();
-            $("#tabla_cotizacion_rxv").hide();
-            showDescription("Freedom TXT", "GAS");
+            "<ul>" + inputs_adds_basics + "</ul>";
+        document.getElementById("colores").innerHTML = "<h5>Color:</h5>" + input_colores_txt;
+        $("#Contenedor_slider").show();
+        $(".contenedor_imagen").hide();
+        $("#tabla_cotizacion_txt").show();
+        $("#tabla_cotizacion_rxv").hide();
+        showDescription("Freedom TXT", "GAS");
     }
     types(modelo);
 }
@@ -57,19 +58,19 @@ function showDescription(modelo, type) {
     carrito.setType(type);
     carrito.setCost();
     stotal = carrito.cost;
-    if(modelo == "Freedom TXT"){
-        
+    if (modelo == "Freedom TXT") {
+
         desc = descripcion_gas_txt;
-        
+
         //document.getElementById("total").innerHTML = "Total $" + carrito.cost + " usd";
         //document.getElementById("total_t").innerHTML = "Total $" + carrito.cost + " usd";
         //document.getElementById("resume").innerHTML = 
-        resume = "La presente cotizacion es del carro de golf "+ carrito.modelo + "  en su versión Gas, con las siguientes caracteristicas:";
+        resume = "La presente cotizacion es del carro de golf " + carrito.modelo + "  en su versión Gas, con las siguientes caracteristicas:";
         //document.getElementById("botones_caracteristicas").innerHTML = "" +
         //    "<ul>" +
         //    inputs_adds_basics + input_colores_txt +
         //    "</ul>";
-    }else{
+    } else {
         switch (type) {
             case "Elite":
                 desc = descripcion_elite_rxv + carrito.cost;
@@ -89,7 +90,7 @@ function showDescription(modelo, type) {
                 }
                 break;
         }
-        resume= "La presente cotizacion es del carro de golf " +carrito.modelo + " en su versión " +carrito.type+", con las siguientes caracteristicas:";
+        resume = "La presente cotizacion es del carro de golf " + carrito.modelo + " en su versión " + carrito.type + ", con las siguientes caracteristicas:";
     }
 
     document.getElementById("descripcion_carrito").innerHTML = desc; // descripcion caracteristicas
@@ -101,7 +102,7 @@ function showDescription(modelo, type) {
 }
 // muestra los colores disponibles para el asiento extra
 function coloresAsientos() {
-    document.getElementById("colores_asientos").innerHTML = "Color asiento extra: "+colores_asientos;// ahora faltara una funcion que los borre
+    document.getElementById("colores_asientos").innerHTML = "Color asiento extra: " + colores_asientos;// ahora faltara una funcion que los borre
     $("#colores_asientos").show();
 }
 // muestra los colores de acuerdo al tamaño de top
@@ -112,6 +113,6 @@ function CT_tabla(medida) {
     } else if (medida == 54) {
         colores_top = colores_top_54;
     }
-    document.getElementById("colores_top").innerHTML = "Color Top: "+colores_top;
+    document.getElementById("colores_top").innerHTML = "Color Top: " + colores_top;
     $("#colores_top").show();
 }

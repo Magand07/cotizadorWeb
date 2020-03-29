@@ -173,6 +173,46 @@ function resetFlags() {
   document.getElementById("top_54").value = true;
   document.getElementById("wind_split").value = true;
   document.getElementById("wind_tinted").value = true;
+  document.getElementById("negro").value = true;
+  document.getElementById("rojo").value = true;
+  document.getElementById("blanco").value = true;
+  document.getElementById("inf_red").value = true;
+  document.getElementById("azul_electric").value = true;
+  document.getElementById("almond").value = true;
+  document.getElementById("charcoal").value = true;
+  document.getElementById("platinum").value = true;
+  document.getElementById("ocean_grey").value = true;
+  document.getElementById("abeige").value = true;
+  document.getElementById("agrey").value = true;
+  document.getElementById("anegro").value = true;
+  document.getElementById("aoyster").value = true;
+  document.getElementById("astonebeige").value = true;
+  document.getElementById("stonebeige54").value = true;
+  document.getElementById("negro54").value = true;
+  document.getElementById("oyster54").value = true;
+  document.getElementById("stonebeige80").value = true;
+  document.getElementById("negro80").value = true;
+  document.getElementById("grey80").value = true;
+  document.getElementById("oyster80").value = true;
+  document.getElementById("split").value = true;
+  document.getElementById("tinted").value = true;
+  document.getElementById("cent").value = true;
+  document.getElementById("ent").value = true;
+}
+
+function resetTable(){
+  document.getElementById("c_t").innerHTML = "";
+  document.getElementById("ae_t").innerHTML = "";
+  document.getElementById("r_t").innerHTML = "";
+  document.getElementById("hi_t").innerHTML = "";
+  document.getElementById("hd_t").innerHTML = "";
+  document.getElementById("s_t").innerHTML = "";
+  document.getElementById("w_t").innerHTML = "";
+  document.getElementById("led_t").innerHTML = "";
+  document.getElementById("ts_t").innerHTML = "";
+  document.getElementById("gb_t").innerHTML = "";
+  document.getElementById("tp_t").innerHTML = "";
+  document.getElementById("tpc_t").innerHTML = "";
 }
 
 // checa que primero se escoja un Top
