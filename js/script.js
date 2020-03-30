@@ -21,23 +21,25 @@ function sumarTopColor(cantidad, input) {
   document.getElementById("total_t").innerHTML = msg + stotal + moneda;
 
 }
-function calcular(costo, nombre, input, id_tabla,val_tabla="Si") {// este sera un problema 
-  //alert(valor+" id tabla: "+id_tabla+" input "+input);
+function calcular(costo, nombre, input, id_tabla, val_tabla = "Si") {// este sera un problema 
+  //alert("CALCULAR id tabla: " + id_tabla + " input " + input + "=" + input.value);
+
   if (noDoubleItem(nombre) != 1) {
     if (checkWindShield(nombre) != 1) {
       valor = input.value;
       if (valor == "false") {
         var respuesta = confirm("Cancelar " + nombre + "?");
         if (respuesta) {
-          //cancelWindshieldTop(nombre);
+          cancelWindshieldTop(nombre);
+          cancelAsientos(nombre);
+          cancelTop(nombre);
           input.value = true;
           stotal = stotal - costo;
-          // cancela el costo en la tabla 
-          alert(id_tabla);
-          llenarTabla(id_tabla,"");
+          // cancela el costo en la tabla
+          llenarTabla(id_tabla, "");
         }
       } else {
-        llenarTabla(id_tabla,val_tabla);
+        llenarTabla(id_tabla, val_tabla);
         input.value = false;
         stotal = stotal + costo;
       }
@@ -47,35 +49,75 @@ function calcular(costo, nombre, input, id_tabla,val_tabla="Si") {// este sera u
     }
   }
 }
+// oculta el div de colores para los asientos
+function cancelAsientos(nombre) {
+  if (nombre == "Asientos extra") {
+    $("#colores_asientos").hide();
+  }
+}
+//oculta el div de los colores para top
+function cancelTop(nombre) {
+  if (nombre == "Top54in" || nombre == "Top80in") {
+    $("#colores_top").hide();
+  }
+}
 // borrar y cancelar el windshield si se cancela el top
 function cancelWindshieldTop(nombre) {
-  //alert("nombre: "+nombre);
-  if (nombre == "Top80in" || nombre == "Top45in") {
+  alert("nombre: "+nombre);
+  if (nombre == "Top80in") {
+    $("#colores_top").hide();
     allTopsOff();
-    if (document.getElementById("wind_split").value == "false" || document.getElementById("split").value == "false") {
+    if (document.getElementById("split").value == "false") {
+      
       stotal = stotal - 156;
       $(".split").hide();
-      document.getElementById("wind_split").value = true;
       document.getElementById("split").value = true;
       alert("split: false \n costo : 156 \n total: " + stotal + "\n" + document.getElementById("split").value);
-      document.getElementById("w_t").innerHTML = "-";
-    } else if (document.getElementById("wind_tinted").value == "false" || document.getElementById("tinted").value == "false") {
-      stotal = stotal - 195.82;
-      alert("tinted: false \n costo :  195.82 \n total: " + stotal); stotal = stotal - 195.82;
-      $(".tinted").hide();
-      document.getElementById("wind_tinted").value = true;
-      document.getElementById("tinted").value = true;
-      document.getElementById("w_t").innerHTML = "-";
+      document.getElementById("w_t").innerHTML = "";
+      allWindshieldOff();
     }
 
-    document.getElementById("tp_t").innerHTML = "";
-    document.getElementById("tpc_t").innerHTML = "";
-    document.getElementById("total").innerHTML = "Total $" + stotal + " usd";
-    document.getElementById("total_t").innerHTML = "Total $" + stotal + " usd";
+    if (document.getElementById("tinted").value == "false") {
+      stotal = stotal - 195.82;
+      $(".tinted").hide();
+      document.getElementById("tinted").value = true;
+      alert("tinted: false \n costo : 195.82 \n total: " + stotal + "\n" + document.getElementById("tinted").value);
+      document.getElementById("w_t").innerHTML = "";
+      allWindshieldOff();
+    }
+
+
   }
+  if (nombre == "Top45in") {
+    $("#colores_top").hide();
+    allTopsOff();
+    if (document.getElementById("split").value == "false") {
+      stotal = stotal - 156;
+      $(".split").hide();
+      document.getElementById("split").value = true;
+      alert("split: false \n costo : 156 \n total: " + stotal + "\n" + document.getElementById("split").value);
+      document.getElementById("w_t").innerHTML = "";
+      allWindshieldOff();
+    }
+
+    if (document.getElementById("tinted").value == "false") {
+      stotal = stotal - 195.82;
+      $(".tinted").hide();
+      document.getElementById("tinted").value = true;
+      alert("split: false \n costo : 195.82 \n total: " + stotal + "\n" + document.getElementById("tinted").value);
+      document.getElementById("w_t").innerHTML = "";
+      allWindshieldOff();
+    }
+
+  }
+  document.getElementById("tp_t").innerHTML = "";
+  document.getElementById("tpc_t").innerHTML = "";
+  document.getElementById("total").innerHTML = "Total $" + stotal + " usd";
+  document.getElementById("total_t").innerHTML = "Total $" + stotal + " usd";
 
 }
 // activar o desactivar la imagen de clase
+// imagen - bandera
 function cambiar(clase, input) {
   //alert(clase+" -> "+input.value);
   var bandera = input.value;
@@ -200,8 +242,8 @@ function resetFlags() {
   document.getElementById("guantes_ambos").value = true;
   document.getElementById("top_80").value = true;
   document.getElementById("top_54").value = true;
-  document.getElementById("wind_split").value = true;
-  document.getElementById("wind_tinted").value = true;
+  document.getElementById("split").value = true;
+  document.getElementById("tinted").value = true;
   document.getElementById("negro").value = true;
   document.getElementById("rojo").value = true;
   document.getElementById("blanco").value = true;
@@ -223,8 +265,6 @@ function resetFlags() {
   document.getElementById("negro80").value = true;
   document.getElementById("grey80").value = true;
   document.getElementById("oyster80").value = true;
-  document.getElementById("split").value = true;
-  document.getElementById("tinted").value = true;
   document.getElementById("cent").value = true;
   document.getElementById("ent").value = true;
 
@@ -281,26 +321,37 @@ function allAsientosOff() {
 }
 //oculta los windshield
 function allWindshieldOff() {
-  $("split").hide();
-  $("tinted").hide();
+  $(".split").hide();
+  $(".tinted").hide();
 }
 
 // checa que primero se escoja un Top
 function checkWindShield(nombre) {
-  if (nombre == "WindShield Tinted" || nombre == "WindShield Split") {
+  if (nombre == "WindShield Tinted") {
     if (document.getElementById("top_80").value == "true" && document.getElementById("top_54").value == "true") {
       alert("Seleccione primero un Top");
-      // no cambiar el top 
-      document.getElementById("split").value = true;
       document.getElementById("tinted").value = true;
       llenarTabla("w_t", "");
-      $(".split").hide();
       $(".tinted").hide();
       return 1;
+    } else {
+      $(".tinted").show();
+      return 0;
     }
+  } else if (nombre == "WindShield Split") {
+    if (document.getElementById("top_80").value == "true" && document.getElementById("top_54").value == "true") {
+      alert("Seleccione primero un Top");
+      document.getElementById("split").value = true;
+      llenarTabla("w_t", "");
+      $(".split").hide();
+      return 1;
+    } else {
+      $(".split").show();
+      return 0;
+    }
+  } else {
     return 0;
   }
-  return 0;
 }
 
 //Checa no elegir doble WindShield o doble top
@@ -308,14 +359,14 @@ function noDoubleItem(item) {
   //alert(document.getElementById(id_ex).value);
   var msg = "Cancele primero el ";
   if (item == "WindShield Split") {
-    if (document.getElementById("wind_tinted").value == "false") {
+    if (document.getElementById("tinted").value == "false") {
       msg = msg + "WindShield Tinted";
       alert(msg);
       return 1;
     }
   }
   if (item == "WindShield Tinted") {
-    if (document.getElementById("wind_split").value == "false") {
+    if (document.getElementById("split").value == "false") {
       msg = msg + "WindShield Split";
       alert(msg);
       return 1;

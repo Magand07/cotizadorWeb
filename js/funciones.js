@@ -9,6 +9,7 @@ showDescription(carrito.modelo, carrito.type);
 function setModelo(modelo) {
     resetFlags();
     resetTable();
+    allOff();
     $("#colores_top").hide();
     $("#colores_asientos").hide();
     if (modelo == "Freedom RXV") {

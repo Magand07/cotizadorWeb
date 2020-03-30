@@ -107,10 +107,10 @@ let input_adds_rxv = "<li>"+
     "<input type='button' value='Top 54in $271' onclick='CT_tabla(\"54\");calcular(271,\"Top54in\",getElementById(\"top_54\"),\"tp_t\",\"54in\");'>" +
     "</li>"+
     "<li>" +
-    "<input type='button' value='Windshield Split $156' onclick='allWindshieldOff();cambiar(\"split\",getElementById(\"split\"));calcular(156,\"WindShield Split\",getElementById(\"wind_split\"),\"w_t\",\"Split\");'>" +
+    "<input type='button' value='Windshield Split $156' onclick='allWindshieldOff();calcular(156,\"WindShield Split\",getElementById(\"split\"),\"w_t\",\"Split\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='WindShield Tinted $195.82' onclick='allWindshieldOff();cambiar(\"tinted\",getElementById(\"tinted\"));calcular(195.82,\"WindShield Tinted\",getElementById(\"wind_tinted\"),\"w_t\",\"Tinted\");'>" +
+    "<input type='button' value='WindShield Tinted $195.82' onclick='allWindshieldOff();calcular(195.82,\"WindShield Tinted\",getElementById(\"tinted\"),\"w_t\",\"Tinted\");'>" +
     "</li>";
 
 let colores_top_80 = '' +
