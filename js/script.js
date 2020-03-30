@@ -313,11 +313,11 @@ function allTopsOff() {
 
 // oculta todos los asiento
 function allAsientosOff() {
-  $("abeige").hide();
-  $("agrey").hide();
-  $("anegro").hide();
-  $("aoyster").hide();
-  $("astonebeige").hide();
+  $(".abeige").hide();
+  $(".agrey").hide();
+  $(".anegro").hide();
+  $(".aoyster").hide();
+  $(".astonebeige").hide();
 }
 //oculta los windshield
 function allWindshieldOff() {
@@ -388,4 +388,3 @@ function noDoubleItem(item) {
   }
   return 0;
 }
-
