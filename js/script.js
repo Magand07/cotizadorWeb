@@ -63,7 +63,7 @@ function cancelTop(nombre) {
 }
 // borrar y cancelar el windshield si se cancela el top
 function cancelWindshieldTop(nombre) {
-  alert("nombre: "+nombre);
+  //alert("nombre: "+nombre);
   if (nombre == "Top80in") {
     $("#colores_top").hide();
     allTopsOff();
@@ -72,7 +72,7 @@ function cancelWindshieldTop(nombre) {
       stotal = stotal - 156;
       $(".split").hide();
       document.getElementById("split").value = true;
-      alert("split: false \n costo : 156 \n total: " + stotal + "\n" + document.getElementById("split").value);
+      //alert("split: false \n costo : 156 \n total: " + stotal + "\n" + document.getElementById("split").value);
       document.getElementById("w_t").innerHTML = "";
       allWindshieldOff();
     }
@@ -81,21 +81,21 @@ function cancelWindshieldTop(nombre) {
       stotal = stotal - 195.82;
       $(".tinted").hide();
       document.getElementById("tinted").value = true;
-      alert("tinted: false \n costo : 195.82 \n total: " + stotal + "\n" + document.getElementById("tinted").value);
+      //alert("tinted: false \n costo : 195.82 \n total: " + stotal + "\n" + document.getElementById("tinted").value);
       document.getElementById("w_t").innerHTML = "";
       allWindshieldOff();
     }
 
 
   }
-  if (nombre == "Top45in") {
+  if (nombre == "Top54in") {
     $("#colores_top").hide();
     allTopsOff();
     if (document.getElementById("split").value == "false") {
       stotal = stotal - 156;
       $(".split").hide();
       document.getElementById("split").value = true;
-      alert("split: false \n costo : 156 \n total: " + stotal + "\n" + document.getElementById("split").value);
+    //alert("split: false \n costo : 156 \n total: " + stotal + "\n" + document.getElementById("split").value);
       document.getElementById("w_t").innerHTML = "";
       allWindshieldOff();
     }
@@ -104,7 +104,7 @@ function cancelWindshieldTop(nombre) {
       stotal = stotal - 195.82;
       $(".tinted").hide();
       document.getElementById("tinted").value = true;
-      alert("split: false \n costo : 195.82 \n total: " + stotal + "\n" + document.getElementById("tinted").value);
+      //alert("split: false \n costo : 195.82 \n total: " + stotal + "\n" + document.getElementById("tinted").value);
       document.getElementById("w_t").innerHTML = "";
       allWindshieldOff();
     }
