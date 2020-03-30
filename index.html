@@ -92,18 +92,19 @@
 
   <header>
     <img src="images/identidad/Logo.png" width="350px" height="150px">
+    <nav class="contenedor_pestanas">
+      <ul class="pestanas">
+        <li class="pestana" onclick="alert('Solo en caso de existir')">Promociones</li>
+        <li class="pestana" onclick="alert('Vista actual')">Cotizacion</li>
+        <li class="pestana"
+          onclick="alert('Madará a imprimir un PDF con el resumen de la cotizacion para que pueda ser guardado o entregado a cliente')">
+          Imprimir</li>
+      </ul>
+    </nav>
   </header>
-  <nav class="contenedor_pestanas">
-    <ul class="pestanas">
-      <li class="pestana" onclick="alert('Solo en caso de existir')">Promociones</li>
-      <li class="pestana" onclick="alert('Vista actual')">Cotizacion</li>
-      <li class="pestana"
-        onclick="alert('Madará a imprimir un PDF con el resumen de la cotizacion para que pueda ser guardado o entregado a cliente')">
-        Imprimir</li>
-    </ul>
-  </nav>
-  <span id="test"></span>
-  <h3 id="modelo_tipo" name="modelo_tipo"></h3>
+  <div>
+    <h3 class="title_car" id="modelo_tipo" name="modelo_tipo"></h3>
+  </div>
   <div class="main_cotizador">
 
     <div class="Contenedor_slider" id="Contenedor_slider">
