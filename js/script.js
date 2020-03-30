@@ -202,7 +202,7 @@ function resetFlags() {
   document.getElementById("ent").value = true;
 }
 
-function resetTable(){
+function resetTable() {
   document.getElementById("c_t").innerHTML = "";
   document.getElementById("ae_t").innerHTML = "";
   document.getElementById("r_t").innerHTML = "";
@@ -215,6 +215,31 @@ function resetTable(){
   document.getElementById("gb_t").innerHTML = "";
   document.getElementById("tp_t").innerHTML = "";
   document.getElementById("tpc_t").innerHTML = "";
+}
+
+// oculta todos los tops 
+function allTopsOff() {
+  $(".stonebeige80").hide();
+  $(".negro80").hide();
+  $(".grey80").hide();
+  $(".oyster80").hide();
+  $(".stonebeige54").hide();
+  $(".negro54").hide();
+  $(".oyster54").hide();
+}
+
+// oculta todos los asiento
+function allAsientosOff() {
+  $("abeige").hide();
+  $("agrey").hide();
+  $("anegro").hide();
+  $("aoyster").hide();
+  $("astonebeige").hide();
+}
+//oculta los windshield
+function allWindshieldOff() {
+  $("split").hide();
+  $("tinted").hide();
 }
 
 // checa que primero se escoja un Top
@@ -269,3 +294,4 @@ function noDoubleItem(item) {
   }
   return 0;
 }
+

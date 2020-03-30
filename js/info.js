@@ -107,26 +107,33 @@ let input_adds_rxv = "<li>"+
     "<input type='button' value='Top 54in $271' onclick='calcular(271,\"Top54in\",getElementById(\"top_54\"),\"tp_t\");llenarTabla(\"tp_t\",\"54\");CT_tabla(\"54\");'>" +
     "</li>"+
     "<li>" +
-    "<input type='button' value='Windshield Split $156' onclick='llenarTabla(\"w_t\",\"Split\");cambiar(\"split\",getElementById(\"split\"));calcular(156,\"WindShield Split\",getElementById(\"wind_split\"),\"w_t\");'>" +
+    "<input type='button' value='Windshield Split $156' onclick='allWindshieldOff();llenarTabla(\"w_t\",\"Split\");cambiar(\"split\",getElementById(\"split\"));calcular(156,\"WindShield Split\",getElementById(\"wind_split\"),\"w_t\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='WindShield Tinted $195.82' onclick='cambiar(\"tinted\",getElementById(\"tinted\"));llenarTabla(\"w_t\",\"Tinted\");calcular(195.82,\"WindShield Tinted\",getElementById(\"wind_tinted\"),\"w_t\");'>" +
+    "<input type='button' value='WindShield Tinted $195.82' onclick='allWindshieldOff();cambiar(\"tinted\",getElementById(\"tinted\"));llenarTabla(\"w_t\",\"Tinted\");calcular(195.82,\"WindShield Tinted\",getElementById(\"wind_tinted\"),\"w_t\");'>" +
     "</li>";
 
 let colores_top_80 = '' +
-    '<input type="button" title="stone beige" onclick="llenarTabla(\'tpc_t\',\'StoneBeige\');cambiar(\'stonebeige80\',getElementById(\'stonebeige80\'));" class="c_stone_beige" />' +
-    '<input type="button" title="negro" onclick="llenarTabla(\'tpc_t\',\'Negro\');cambiar(\'negro80\',getElementById(\'negro80\'));" class="c_negro" />' +
-    '<input type="button" title="grey" onclick="llenarTabla(\'tpc_t\',\'Grey\');cambiar(\'grey80\',getElementById(\'grey80\'));" class="c_grey" />' +
-    '<input type="button" title="oyster" onclick="llenarTabla(\'tpc_t\',\'Oyster\');cambiar(\'oyster80\',getElementById(\'oyster80\'));" class="c_oyster" />';
+    '<input type="button" title="stone beige" onclick="allTopsOff();llenarTabla(\'tpc_t\',\'StoneBeige\');cambiar(\'stonebeige80\',getElementById(\'stonebeige80\'));" class="c_stone_beige" />' +
+    '<input type="button" title="negro" onclick="allTopsOff();llenarTabla(\'tpc_t\',\'Negro\');cambiar(\'negro80\',getElementById(\'negro80\'));" class="c_negro" />' +
+    '<input type="button" title="grey" onclick="allTopsOff();llenarTabla(\'tpc_t\',\'Grey\');cambiar(\'grey80\',getElementById(\'grey80\'));" class="c_grey" />' +
+    '<input type="button" title="oyster" onclick="allTopsOff();llenarTabla(\'tpc_t\',\'Oyster\');cambiar(\'oyster80\',getElementById(\'oyster80\'));" class="c_oyster" />';
 
 let colores_top_54 = '' +
-    '<input type="button" title="stonebeige" onclick="llenarTabla(\'tpc_t\',\'Stonebeige\');cambiar(\'stonebeige54\',getElementById(\'stonebeige54\'));" class="c_stone_beige" />' +
-    '<input type="button" title="negro" onclick="llenarTabla(\'tpc_t\',\'Negro\');cambiar(\'negro54\',getElementById(\'negro54\'));" class="c_negro" />' +
-    '<input type="button" title="oyster" onclick="llenarTabla(\'tpc_t\',\'Oyster\');cambiar(\'oyster54\',getElementById(\'oyster54\'));" class="c_oyster" />';
+    '<input type="button" title="stonebeige" onclick="allTopsOff();llenarTabla(\'tpc_t\',\'Stonebeige\');cambiar(\'stonebeige54\',getElementById(\'stonebeige54\'));" class="c_stone_beige" />' +
+    '<input type="button" title="negro" onclick="allTopsOff();llenarTabla(\'tpc_t\',\'Negro\');cambiar(\'negro54\',getElementById(\'negro54\'));" class="c_negro" />' +
+    '<input type="button" title="oyster" onclick="allTopsOff();llenarTabla(\'tpc_t\',\'Oyster\');cambiar(\'oyster54\',getElementById(\'oyster54\'));" class="c_oyster" />';
 
 let colores_asientos = '' +
-    '<input type="button" title="beige +$" onclick="llenarTabla(\'ae_t\',\'Beige\');cambiar(\'abeige\',getElementById(\'abeige\'));" class="c_beige" />' +
-    '<input type="button" title="grey +$" onclick="llenarTabla(\'ae_t\',\'Grey\');cambiar(\'agrey\',getElementById(\'agrey\'));" class="c_grey" />' +
-    '<input type="button" title="negro +$" onclick="llenarTabla(\'ae_t\',\'Negro\');cambiar(\'anegro\',getElementById(\'anegro\'));" class="c_negro" />' +
-    '<input type="button" title="oyster +$" onclick="llenarTabla(\'ae_t\',\'Oyster\');cambiar(\'aoyster\',getElementById(\'aoyster\'));" class="c_oyster" />' +
-    '<input type="button" title="stonebeige +$" onclick="llenarTabla(\'ae_t\',\'StoneBeige\');cambiar(\'astonebeige\',getElementById(\'astonebeige\'));" class="c_stone_beige" />';
+    '<input type="button" title="beige" onclick="allAsientosOff();llenarTabla(\'ae_t\',\'Beige\');cambiar(\'abeige\',getElementById(\'abeige\'));" class="c_beige" />' +
+    '<input type="button" title="grey" onclick="allAsientosOff();llenarTabla(\'ae_t\',\'Grey\');cambiar(\'agrey\',getElementById(\'agrey\'));" class="c_grey" />' +
+    '<input type="button" title="negro" onclick="allAsientosOff();llenarTabla(\'ae_t\',\'Negro\');cambiar(\'anegro\',getElementById(\'anegro\'));" class="c_negro" />' +
+    '<input type="button" title="oyster" onclick="allAsientosOff();llenarTabla(\'ae_t\',\'Oyster\');cambiar(\'aoyster\',getElementById(\'aoyster\'));" class="c_oyster" />' +
+    '<input type="button" title="stonebeige" onclick="allAsientosOff();llenarTabla(\'ae_t\',\'StoneBeige\');cambiar(\'astonebeige\',getElementById(\'astonebeige\'));" class="c_stone_beige" />';
+
+    let colores_asientos_rxv = '' +
+    '<input type="button" title="beige" onclick="allAsientosOff();llenarTabla(\'ae_t_rxv\',\'Beige\');cambiar(\'abeige\',getElementById(\'abeige\'));" class="c_beige" />' +
+    '<input type="button" title="grey" onclick="allAsientosOff();llenarTabla(\'ae_t_rxv\',\'Grey\');cambiar(\'agrey\',getElementById(\'agrey\'));" class="c_grey" />' +
+    '<input type="button" title="negro" onclick="allAsientosOff();llenarTabla(\'ae_t_rxv\',\'Negro\');cambiar(\'anegro\',getElementById(\'anegro\'));" class="c_negro" />' +
+    '<input type="button" title="oyster" onclick="allAsientosOff();llenarTabla(\'ae_t_rxv\',\'Oyster\');cambiar(\'aoyster\',getElementById(\'aoyster\'));" class="c_oyster" />' +
+    '<input type="button" title="stonebeige" onclick="allAsientosOff();llenarTabla(\'ae_t_rxv\',\'StoneBeige\');cambiar(\'astonebeige\',getElementById(\'astonebeige\'));" class="c_stone_beige" />';

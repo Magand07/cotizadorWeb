@@ -105,7 +105,11 @@ function showDescription(modelo, type) {
 }
 // muestra los colores disponibles para el asiento extra
 function coloresAsientos() {
-    document.getElementById("colores_asientos").innerHTML = "Color asiento extra: " + colores_asientos;// ahora faltara una funcion que los borre
+    if(carrito.modelo == "Freedom RXV"){
+        document.getElementById("colores_asientos").innerHTML = "Color asiento extra: " + colores_asientos_rxv;// ahora faltara una funcion que los borre
+    }else{
+        document.getElementById("colores_asientos").innerHTML = "Color asiento extra: " + colores_asientos;// ahora faltara una funcion que los borre
+    }
     $("#colores_asientos").show();
 }
 // muestra los colores de acuerdo al tamaño de top
