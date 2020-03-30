@@ -21,54 +21,57 @@ function sumarTopColor(cantidad, input) {
   document.getElementById("total_t").innerHTML = msg + stotal + moneda;
 
 }
-function calcular(costo, nombre, input, id_tabla) {// este sera un problema 
+function calcular(costo, nombre, input, id_tabla,val_tabla="Si") {// este sera un problema 
   //alert(valor+" id tabla: "+id_tabla+" input "+input);
   if (noDoubleItem(nombre) != 1) {
     if (checkWindShield(nombre) != 1) {
-      var msg = "Total $";
-      var moneda = " usd";
       valor = input.value;
       if (valor == "false") {
         var respuesta = confirm("Cancelar " + nombre + "?");
         if (respuesta) {
-          cancelWindshieldTop(nombre);
+          //cancelWindshieldTop(nombre);
           input.value = true;
           stotal = stotal - costo;
           // cancela el costo en la tabla 
-          document.getElementById(id_tabla).innerHTML = "";
-          // aqui resetear las imagenes
+          alert(id_tabla);
+          llenarTabla(id_tabla,"");
         }
       } else {
+        llenarTabla(id_tabla,val_tabla);
         input.value = false;
         stotal = stotal + costo;
       }
-      document.getElementById("total").innerHTML = msg + stotal + moneda;
-      document.getElementById("total_t").innerHTML = msg + stotal + moneda;
+      document.getElementById("total").innerHTML = "Total $" + stotal + " usd";
+      document.getElementById("total_t").innerHTML = "Total $" + stotal + " usd";
 
     }
   }
 }
 // borrar y cancelar el windshield si se cancela el top
-function cancelWindshieldTop(nombre){
-  
-  if(nombre == "Top80in" || nombre == "Top45in"){
+function cancelWindshieldTop(nombre) {
+  //alert("nombre: "+nombre);
+  if (nombre == "Top80in" || nombre == "Top45in") {
     allTopsOff();
-    if(document.getElementById("split").value == "false"){
+    if (document.getElementById("wind_split").value == "false" || document.getElementById("split").value == "false") {
       stotal = stotal - 156;
       $(".split").hide();
+      document.getElementById("wind_split").value = true;
       document.getElementById("split").value = true;
-      document.getElementById("w_t").innerHTML = "";
-      document.getElementById("tp_t").innerHTML = "-";
-      document.getElementById("tpc_t").innerHTML = "";      
-    }
-    if(document.getElementById("tinted").value == "false"){
+      alert("split: false \n costo : 156 \n total: " + stotal + "\n" + document.getElementById("split").value);
+      document.getElementById("w_t").innerHTML = "-";
+    } else if (document.getElementById("wind_tinted").value == "false" || document.getElementById("tinted").value == "false") {
       stotal = stotal - 195.82;
+      alert("tinted: false \n costo :  195.82 \n total: " + stotal); stotal = stotal - 195.82;
       $(".tinted").hide();
+      document.getElementById("wind_tinted").value = true;
       document.getElementById("tinted").value = true;
-      document.getElementById("w_t").innerHTML = "";
-      document.getElementById("tp_t").innerHTML = "";
-      document.getElementById("tpc_t").innerHTML = "";
+      document.getElementById("w_t").innerHTML = "-";
     }
+
+    document.getElementById("tp_t").innerHTML = "";
+    document.getElementById("tpc_t").innerHTML = "";
+    document.getElementById("total").innerHTML = "Total $" + stotal + " usd";
+    document.getElementById("total_t").innerHTML = "Total $" + stotal + " usd";
   }
 
 }
@@ -109,9 +112,9 @@ function cambiarFoto(num) {
 function llenarTabla(posicion, valor) {
   document.getElementById(posicion).innerHTML = valor;
 }
-// se podria eliminar...
+// se podria eliminar...NO!
 function llenarTablaColor(color) {
-  alert(color);
+  //alert(color);
   document.getElementById('c_t').innerHTML = color;
 }
 // borra el contenido de la pagina recargandola

@@ -42,15 +42,15 @@ let input_colores_txt = "<ul class='square'>"+"<h5>Color:</h5>" +
     "</ul>";
 
 let inputs_adds_basics = "<li>"+
-    "<input type='button' value='Asientos extra (2) $1,558' onclick='coloresAsientos();calcular(1558,\"Asientos extra\",getElementById(\"asientos_extra\"),\"ae_t\");llenarTabla(\"ae_t\",\"Si\");'>" +
+    "<input type='button' value='Asientos extra (2) $1,558' onclick='coloresAsientos();calcular(1558,\"Asientos extra\",getElementById(\"asientos_extra\"),\"ae_t\");'>" +
     "</li>" +
-    "<li><input type='button' value='Rines $727.3' onclick='calcular(727.3,\"Rines\",getElementById(\"rines\"),\"r_t\");cambiarFoto(9,\"r_t\");llenarTabla(\"r_t\",\"Si\");'>" +
+    "<li><input type='button' value='Rines $727.3' onclick='calcular(727.3,\"Rines\",getElementById(\"rines\"),\"r_t\");cambiarFoto(9,\"r_t\");'>" +
     "</li>" +
-    "<li><input type='button' value='Sonido $772.8' onclick='calcular(772.8,\"Sonido\",getElementById(\"sonido\"),\"s_t\");llenarTabla(\"s_t\",\"Si\");'>" +
+    "<li><input type='button' value='Sonido $772.8' onclick='calcular(772.8,\"Sonido\",getElementById(\"sonido\"),\"s_t\");'>" +
     "</li>" +
-    "<li><input type='button' value='Hielera Izquierda $156.54' onclick='calcular(156.54,\"Hielera Izquierda\",getElementById(\"hielera_izq\"),\"hi_t\");llenarTabla(\"hi_t\",\"Si\");'>" +
+    "<li><input type='button' value='Hielera Izquierda $156.54' onclick='calcular(156.54,\"Hielera Izquierda\",getElementById(\"hielera_izq\"),\"hi_t\");'>" +
     "</li>" +
-    "<li><input type='button' value='Hielera Derecha $156.54' onclick='calcular(156.54,\"Hielera Derecha\",getElementById(\"hielera_der\"),\"hd_t\");llenarTabla(\"hd_t\",\"Si\");'>" +
+    "<li><input type='button' value='Hielera Derecha $156.54' onclick='calcular(156.54,\"Hielera Derecha\",getElementById(\"hielera_der\"),\"hd_t\");'>" +
     "</li>";
 
 let input_colores_rxv = "<ul class='square'>"+"<h5>Color:</h5>"+ 
@@ -75,42 +75,42 @@ let input_colores_rxv = "<ul class='square'>"+"<h5>Color:</h5>"+
     "</ul>";
 
 let input_adds_rxv = "<li>"+
-    "<input type='button' value='Asientos extra (2) $1,558' onclick='coloresAsientos();calcular(1558,\"Asientos extra\",getElementById(\"asientos_extra\"),\"ae_t\");llenarTabla(\"ae_t_rxv\",\"Si\");'>" +
+    "<input type='button' value='Asientos extra (2) $1,558' onclick='coloresAsientos();calcular(1558,\"Asientos extra\",getElementById(\"asientos_extra\"),\"ae_t_rxv\");'>" +
     "</li>" +
-    "<li><input type='button' value='Rines $727.3' onclick='calcular(727.3,\"Rines\",getElementById(\"rines\"),\"r_t\");cambiarFoto(9,\"r_t\");llenarTabla(\"r_t_rxv\",\"Si\");'>" +
+    "<li><input type='button' value='Rines $727.3' onclick='calcular(727.3,\"Rines\",getElementById(\"rines\"),\"r_t_rxv\");cambiarFoto(9,\"r_t\");'>" +
     "</li>" +
-    "<li><input type='button' value='Sonido $772.8' onclick='calcular(772.8,\"Sonido\",getElementById(\"sonido\"),\"s_t\");llenarTabla(\"s_t_rxv\",\"Si\");'>" +
+    "<li><input type='button' value='Sonido $772.8' onclick='calcular(772.8,\"Sonido\",getElementById(\"sonido\"),\"s_t_rxv\");'>" +
     "</li>" +
-    "<li><input type='button' value='Hielera Izquierda $156.54' onclick='calcular(156.54,\"Hielera Izquierda\",getElementById(\"hielera_izq\"),\"hi_t\");llenarTabla(\"hi_t_rxv\",\"Si\");'>" +
+    "<li><input type='button' value='Hielera Izquierda $156.54' onclick='calcular(156.54,\"Hielera Izquierda\",getElementById(\"hielera_izq\"),\"hi_t_rxv\");'>" +
     "</li>" +
-    "<li><input type='button' value='Hielera Derecha $156.54' onclick='calcular(156.54,\"Hielera Derecha\",getElementById(\"hielera_der\"),\"hd_t\");llenarTabla(\"hd_t_rxv\",\"Si\");'>" +
+    "<li><input type='button' value='Hielera Derecha $156.54' onclick='calcular(156.54,\"Hielera Derecha\",getElementById(\"hielera_der\"),\"hd_t_rxv\");'>" +
     "</li>"+
     "<li>" +
-    "<input type='button' value='Luces LED $195.65' onclick='calcular(195.65,\"LucesLed\",getElementById(\"leds\"),\"led_t\");llenarTabla(\"led_t\",\"Si\");'>" +
+    "<input type='button' value='Luces LED $195.65' onclick='calcular(195.65,\"LucesLed\",getElementById(\"leds\"),\"led_t\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='Turn Signals $305' onclick='calcular(305,\"TurnSignals\",getElementById(\"turn_signal\"),\"ts_t\");llenarTabla(\"ts_t\",\"Si\");'>" +
+    "<input type='button' value='Turn Signals $305' onclick='calcular(305,\"TurnSignals\",getElementById(\"turn_signal\"),\"ts_t\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='Caja de guantes Conductor $132.80' onclick='calcular(132.80,\"Caja guantes Conductor\",getElementById(\"guantes_conductor\"),\"gb_t\");llenarTabla(\"gb_t\",\"Conductor\");'>" +
+    "<input type='button' value='Caja de guantes Conductor $132.80' onclick='calcular(132.80,\"Caja guantes Conductor\",getElementById(\"guantes_conductor\"),\"gb_t\",\"Conductor\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='Caja de guantes Pasajero $132.80' onclick='calcular(132.80,\"Caja guantes Pasajero\",getElementById(\"guantes_pasajero\"),\"gb_t\");llenarTabla(\"gb_t\",\"Pasajero\");'>" +
+    "<input type='button' value='Caja de guantes Pasajero $132.80' onclick='calcular(132.80,\"Caja guantes Pasajero\",getElementById(\"guantes_pasajero\"),\"gb_t\",\"Pasajero\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='Caja de guantes Ambos $204.82' onclick='calcular(204.82,\"Caja guantes Pasajero y Conductor\",getElementById(\"guantes_ambos\"),\"gb_t\");llenarTabla(\"gb_t\",\"Ambos\");'>" +
+    "<input type='button' value='Caja de guantes Ambos $204.82' onclick='calcular(204.82,\"Caja guantes Pasajero y Conductor\",getElementById(\"guantes_ambos\"),\"gb_t\",\"Ambos\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='Top 80in $315.12' onclick='calcular(315.12,\"Top80in\",getElementById(\"top_80\"),\"tp_t\");llenarTabla(\"tp_t\",\"80\");CT_tabla(\"80\");'>" +
+    "<input type='button' value='Top 80in $315.12' onclick='CT_tabla(\"80\");calcular(315.12,\"Top80in\",getElementById(\"top_80\"),\"tp_t\",\"80in\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='Top 54in $271' onclick='calcular(271,\"Top54in\",getElementById(\"top_54\"),\"tp_t\");llenarTabla(\"tp_t\",\"54\");CT_tabla(\"54\");'>" +
+    "<input type='button' value='Top 54in $271' onclick='CT_tabla(\"54\");calcular(271,\"Top54in\",getElementById(\"top_54\"),\"tp_t\",\"54in\");'>" +
     "</li>"+
     "<li>" +
-    "<input type='button' value='Windshield Split $156' onclick='allWindshieldOff();llenarTabla(\"w_t\",\"Split\");cambiar(\"split\",getElementById(\"split\"));calcular(156,\"WindShield Split\",getElementById(\"wind_split\"),\"w_t\");'>" +
+    "<input type='button' value='Windshield Split $156' onclick='allWindshieldOff();cambiar(\"split\",getElementById(\"split\"));calcular(156,\"WindShield Split\",getElementById(\"wind_split\"),\"w_t\",\"Split\");'>" +
     "</li>" +
     "<li>" +
-    "<input type='button' value='WindShield Tinted $195.82' onclick='allWindshieldOff();cambiar(\"tinted\",getElementById(\"tinted\"));llenarTabla(\"w_t\",\"Tinted\");calcular(195.82,\"WindShield Tinted\",getElementById(\"wind_tinted\"),\"w_t\");'>" +
+    "<input type='button' value='WindShield Tinted $195.82' onclick='allWindshieldOff();cambiar(\"tinted\",getElementById(\"tinted\"));calcular(195.82,\"WindShield Tinted\",getElementById(\"wind_tinted\"),\"w_t\",\"Tinted\");'>" +
     "</li>";
 
 let colores_top_80 = '' +
