@@ -31,6 +31,7 @@ function calcular(costo, nombre, input, id_tabla) {// este sera un problema
       if (valor == "false") {
         var respuesta = confirm("Cancelar " + nombre + "?");
         if (respuesta) {
+          cancelWindshieldTop(nombre);
           input.value = true;
           stotal = stotal - costo;
           // cancela el costo en la tabla 
@@ -47,7 +48,30 @@ function calcular(costo, nombre, input, id_tabla) {// este sera un problema
     }
   }
 }
+// borrar y cancelar el windshield si se cancela el top
+function cancelWindshieldTop(nombre){
+  
+  if(nombre == "Top80in" || nombre == "Top45in"){
+    allTopsOff();
+    if(document.getElementById("split").value == "false"){
+      stotal = stotal - 156;
+      $(".split").hide();
+      document.getElementById("split").value = true;
+      document.getElementById("w_t").innerHTML = "";
+      document.getElementById("tp_t").innerHTML = "-";
+      document.getElementById("tpc_t").innerHTML = "";      
+    }
+    if(document.getElementById("tinted").value == "false"){
+      stotal = stotal - 195.82;
+      $(".tinted").hide();
+      document.getElementById("tinted").value = true;
+      document.getElementById("w_t").innerHTML = "";
+      document.getElementById("tp_t").innerHTML = "";
+      document.getElementById("tpc_t").innerHTML = "";
+    }
+  }
 
+}
 // activar o desactivar la imagen de clase
 function cambiar(clase, input) {
   //alert(clase+" -> "+input.value);
@@ -200,6 +224,8 @@ function resetFlags() {
   document.getElementById("tinted").value = true;
   document.getElementById("cent").value = true;
   document.getElementById("ent").value = true;
+
+
 }
 
 function resetTable() {
@@ -215,6 +241,12 @@ function resetTable() {
   document.getElementById("gb_t").innerHTML = "";
   document.getElementById("tp_t").innerHTML = "";
   document.getElementById("tpc_t").innerHTML = "";
+  document.getElementById("c_t_rxv").innerHTML = "";
+  document.getElementById("ae_t_rxv").innerHTML = "";
+  document.getElementById("r_t_rxv").innerHTML = "";
+  document.getElementById("hi_t_rxv").innerHTML = "";
+  document.getElementById("hd_t_rxv").innerHTML = "";
+  document.getElementById("s_t_rxv").innerHTML = "";
 }
 
 // oculta todos los tops 
@@ -226,6 +258,14 @@ function allTopsOff() {
   $(".stonebeige54").hide();
   $(".negro54").hide();
   $(".oyster54").hide();
+
+  document.getElementById("stonebeige80").value = true;
+  document.getElementById("negro80").value = true;
+  document.getElementById("grey80").value = true;
+  document.getElementById("oyster80").value = true;
+  document.getElementById("stonebeige54").value = true;
+  document.getElementById("negro54").value = true;
+  document.getElementById("oyster54").value = true;
 }
 
 // oculta todos los asiento
