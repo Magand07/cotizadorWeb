@@ -93,3 +93,16 @@
     clear: both;
     float: left;
 }
+/* asientos */
+.asientonegro, .asientooyster,.asientostonebeige{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: 1;
+}
+.premiumgrey,.premiummushroom,.premiumnegro{
+    position:absolute;
+    width:500px;
+    height:340px;
+    z-index: 1;
+}
