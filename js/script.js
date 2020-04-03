@@ -3,30 +3,18 @@
  * mail. magand07@gmail.com
  * tel. 5547631372
  */
-//WIP Help!
-function sumarTopColor(cantidad, input) {
-  var msg = "Total $";
-  var moneda = " usd";
-
-  valor = input.value;
-  //alert(valor+" id tabla: "+id_tabla);
-  if (valor == "true") {
-    input.value = false;
-    stotal = stotal + costo;
-  } else {
-    input.value = true;
-    stotal = stotal - costo;
-  }
-  document.getElementById("total").innerHTML = msg + stotal + moneda;
-  document.getElementById("total_t").innerHTML = msg + stotal + moneda;
-
-}
-function calcular(costo, nombre, input, id_tabla, val_tabla = "Si") {// este sera un problema 
+function calcular(costo_e,costo_c=0, nombre, input, id_tabla, val_tabla = "Si") {// este sera un problema 
   //alert("CALCULAR id tabla: " + id_tabla + " input " + input + "=" + input.value);
-
+   
   if (noDoubleItem(nombre) != 1) {
     if (checkWindShield(nombre) != 1) {
       valor = input.value;
+      var r = 0;
+
+      var costo = new Saldo();
+      costo.setEntero(Number.parseInt(costo_e));
+      costo.setCentavos(Number.parseInt(costo_c));
+      
       if (valor == "false") {
         var respuesta = confirm("Cancelar " + nombre + "?");
         if (respuesta) {
@@ -34,21 +22,23 @@ function calcular(costo, nombre, input, id_tabla, val_tabla = "Si") {// este ser
           cancelAsientos(nombre);
           cancelTop(nombre);
           input.value = true;
-          stotal = stotal - costo;
+          r = stotal.sub(costo);
           // cancela el costo en la tabla
           llenarTabla(id_tabla, "");
         }
       } else {
+        console.log(stotal);
+        r = stotal.add(costo);
         llenarTabla(id_tabla, val_tabla);
         input.value = false;
-        stotal = stotal + costo;
       }
-      document.getElementById("total").innerHTML = "Total $" + stotal + " usd";
-      document.getElementById("total_t").innerHTML = "Total $" + stotal + " usd";
+      document.getElementById("total").innerHTML = "Total $" + r + " usd";
+      document.getElementById("total_t").innerHTML = "Total $" + r + " usd";
 
     }
   }
 }
+
 // oculta el div de colores para los asientos
 function cancelAsientos(nombre) {
   if (nombre == "Asientos extra") {
@@ -64,12 +54,13 @@ function cancelTop(nombre) {
 // borrar y cancelar el windshield si se cancela el top
 function cancelWindshieldTop(nombre) {
   //alert("nombre: "+nombre);
+  var r = 0 ;
   if (nombre == "Top80in") {
     $("#colores_top").hide();
     allTopsOff();
     if (document.getElementById("split").value == "false") {
-      
-      stotal = stotal - 156;
+      var cost_windshield = new Saldo(156,0);
+      r = stotal.sub(cost_windshield);
       $(".split").hide();
       document.getElementById("split").value = true;
       //alert("split: false \n costo : 156 \n total: " + stotal + "\n" + document.getElementById("split").value);
@@ -78,7 +69,8 @@ function cancelWindshieldTop(nombre) {
     }
 
     if (document.getElementById("tinted").value == "false") {
-      stotal = stotal - 195.82;
+      var cost_windshield = new Saldo(195,82);
+      r = stotal.sub(cost_windshield);
       $(".tinted").hide();
       document.getElementById("tinted").value = true;
       //alert("tinted: false \n costo : 195.82 \n total: " + stotal + "\n" + document.getElementById("tinted").value);
@@ -92,16 +84,18 @@ function cancelWindshieldTop(nombre) {
     $("#colores_top").hide();
     allTopsOff();
     if (document.getElementById("split").value == "false") {
-      stotal = stotal - 156;
+      var cost_windshield = new Saldo(156,0);
+      r = stotal.sub(cost_windshield);
       $(".split").hide();
       document.getElementById("split").value = true;
-    //alert("split: false \n costo : 156 \n total: " + stotal + "\n" + document.getElementById("split").value);
+      //alert("split: false \n costo : 156 \n total: " + stotal + "\n" + document.getElementById("split").value);
       document.getElementById("w_t").innerHTML = "";
       allWindshieldOff();
     }
 
     if (document.getElementById("tinted").value == "false") {
-      stotal = stotal - 195.82;
+      var cost_windshield = new Saldo(195,82);
+      r = stotal.sub(cost_windshield);
       $(".tinted").hide();
       document.getElementById("tinted").value = true;
       //alert("split: false \n costo : 195.82 \n total: " + stotal + "\n" + document.getElementById("tinted").value);
@@ -112,8 +106,8 @@ function cancelWindshieldTop(nombre) {
   }
   document.getElementById("tp_t").innerHTML = "";
   document.getElementById("tpc_t").innerHTML = "";
-  document.getElementById("total").innerHTML = "Total $" + stotal + " usd";
-  document.getElementById("total_t").innerHTML = "Total $" + stotal + " usd";
+  document.getElementById("total").innerHTML = "Total $" + r + " usd";
+  document.getElementById("total_t").innerHTML = "Total $" + r + " usd";
 
 }
 // activar o desactivar la imagen de clase
@@ -228,6 +222,15 @@ function allColorsOff() {
   $(".charcoal").hide();
   $(".platinum").hide();
   $(".ocean_grey").hide();
+}
+// quita todos los asientos 
+function allSeatsOff(){
+ $(".asientonegro").hide();
+ $(".asientooyster").hide();
+ $(".asientostonebeige").hide();
+ $(".premiumgrey").hide();
+ $(".premiummushroom").hide();
+ $(".premiumnegro").hide();
 }
 function resetFlags() {
   document.getElementById("asientos_extra").value = true;
