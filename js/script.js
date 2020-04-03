@@ -3,9 +3,21 @@
  * mail. magand07@gmail.com
  * tel. 5547631372
  */
+function totalToSaldo(){
+  var dot = String(stotal).indexOf(".");
+  var ent = Number.parseInt(stotal);
+  var cent = 0;
+  if(dot != -1){
+    ent = String(stotal).substr(0,dot);
+    cent = String(stotal).substr(dot+1);
+    console.log(ent+","+cent);
+  }
+  return new Saldo(Number.parseInt(ent),Number.parseInt(cent));
+}
 function calcular(costo_e,costo_c=0, nombre, input, id_tabla, val_tabla = "Si") {// este sera un problema 
   //alert("CALCULAR id tabla: " + id_tabla + " input " + input + "=" + input.value);
-   
+  var newTotal = totalToSaldo();
+  console.log(newTotal);
   if (noDoubleItem(nombre) != 1) {
     if (checkWindShield(nombre) != 1) {
       valor = input.value;
@@ -22,16 +34,16 @@ function calcular(costo_e,costo_c=0, nombre, input, id_tabla, val_tabla = "Si") 
           cancelAsientos(nombre);
           cancelTop(nombre);
           input.value = true;
-          r = stotal.sub(costo);
+          r = newTotal.sub(costo);
           // cancela el costo en la tabla
           llenarTabla(id_tabla, "");
         }
       } else {
-        console.log(stotal);
-        r = stotal.add(costo);
+        r = newTotal.add(costo);
         llenarTabla(id_tabla, val_tabla);
         input.value = false;
       }
+      stotal = newTotal.toString();
       document.getElementById("total").innerHTML = "Total $" + r + " usd";
       document.getElementById("total_t").innerHTML = "Total $" + r + " usd";
 
