@@ -1,66 +1,50 @@
+<!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="css/panel_caracteristicas.css">
 <link rel="stylesheet" href="css/colores.css">
 <link rel="stylesheet" href="css/layers.css">
 <link rel="stylesheet" href="css/test.css">
 <script src="js/jquery-3.4.1.min.js"></script>
-<script type='text/javascript' src="js/script.js"></script>
-<title>Test</title>
-<body onload="firstLoad();">
-    <input type="hidden" id="negro" value="true" />
-<input type="hidden" id="rojo" value="true" />
-<input type="hidden" id="blanco" value="true" />
-<input type="hidden" id="inf_red" value="true" />
-<input type="hidden" id="azul_electric" value="true" />
-<input type="hidden" id="almond" value="true" />
-<input type="hidden" id="charcoal" value="true" />
-<input type="hidden" id="platinum" value="true" />
-<input type="hidden" id="ocean_grey" value="true" />
-<!-- extra seat-->
-<input type="hidden" id="abeige" value="true" />
-<input type="hidden" id="agrey" value="true" />
-<input type="hidden" id="anegro" value="true" />
-<input type="hidden" id="aoyster" value="true" />
-<input type="hidden" id="astonebeige" value="true" />
-<!-- top 54in color-->
-<input type="hidden" id="stonebeige54" value="true" />
-<input type="hidden" id="negro54" value="true" />
-<input type="hidden" id="oyster54" value="true" />
-<!-- top 80in color-->
-<input type="hidden" id="stonebeige80" value="true" />
-<input type="hidden" id="negro80" value="true" />
-<input type="hidden" id="grey80" value="true" />
-<input type="hidden" id="oyster80" value="true" />
-<!-- windshield type-->
-<input type="hidden" id="split" value="true" />
-<input type="hidden" id="tinted" value="true" />
-<img class="negro" src="images/RXV/colores/negro.png"  alt="negro" width="500px" height="340">
 
-      <img class="rojo" src="images/RXV/colores/rojo.png"  alt="rojo" width="500px" height="340">
-      <img class="blanco" src="images/RXV/colores/blanco.png"  alt="blanco" width="500px" height="340">
-      <img class="inf_red" src="images/RXV/colores/inf_red.png"  alt="inf_red" width="500px" height="340">
-      <img class="azul_electric" src="images/RXV/colores/azul_electric.png"  alt="azul_electric" width="500px" height="340">
-      <img class="almond" src="images/RXV/colores/almond.png"  alt="almond" width="500px" height="340">
-      <img class="charcoal" src="images/RXV/colores/charcoal.png"  alt="charcoal" width="500px" height="340">
-      <img class="platinum" src="images/RXV/colores/platinum.png"  alt="platinum" width="500px" height="340">
-      <img class="ocean_grey" src="images/RXV/colores/ocean_grey.png"  alt="ocean_grey" width="500px" height="340">
-      
-      <img class="abeige" src="images/RXV/asientos extra/abeige.png" alt="abeige" width="500px" height="340">
-      <img class="agrey" src="images/RXV/asientos extra/agrey.png" alt="agrey" width="500px" height="340">
-      <img class="anegro" src="images/RXV/asientos extra/anegro.png" alt="anegro" width="500px" height="340">
-      <img class="aoyster" src="images/RXV/asientos extra/aoyster.png" alt="aoyster" width="500px" height="340">
-      <img class="astonebeige" src="images/RXV/asientos extra/astonebeige.png" alt="astonebeige" width="500px" height="340">
-      
-      <img class="stonebeige54" src="images/RXV/top54/stonebeige54.png" alt="stonebeige54" width="500px" height="340">
-      <img class="negro54" src="images/RXV/top54/negro54.png" alt="negro54" width="500px" height="340">
-      <img class="oyster54" src="images/RXV/top54/oyster54.png" alt="oyster54" width="500px" height="340">
-      
-      <img class="stonebeige80" src="images/RXV/top80/stonebeige80.png" alt="stonebeige80" width="500px" height="340">
-      <img class="negro80" src="images/RXV/top80/negro80.png" alt="negro80" width="500px" height="340">
-      <img class="grey80" src="images/RXV/top80/grey80.png" alt="grey80" width="500px" height="340">
-      <img class="oyster80" src="images/RXV/top80/oyster80.png" alt="oyster80" width="500px" height="340">
-      
-  <!--input type="hidden" id="hielera" value="true"/>
+<script src="js/bootstrap.min.js"></script>
+<script type='text/javascript' src="js/script.js"></script>
+<script type='text/javascript' src="js/saldo.js"></script>
+<title>Test</title>
+
+<body>
+    <script>
+        var totala = 5540;
+        var a = new Saldo();
+        a.setEntero(totala);
+        a.setCentavos(0);            
+    </script>
+    <input onclick="attempt(1558)" type="button" value="1558" id="ae" name="ae">
+    <input onclick="attempt(727,30)" type="button" value="727.3" id="r" name="r">
+    <input onclick="attempt(772,80)" type="button" value="772.8" id="s" name="s">
+    <input onclick="attempt(156,54)" type="button" value="156.54" id="hi" name="hi">
+    <input onclick="attempt(156,54)" type="button" value="156.54" id="hd" name="hd">
+    <input type="button" value="reset" onclick="totala = 5540">
+    <div id="test">
+        <script>
+            document.write(totala);
+        </script>
+    </div>
+    <script>
+        function attempt(ent,cent=0) {
+            let cost = new Saldo();
+            console.log(ent+","+cent);
+            
+            cost.setEntero(Number.parseInt(ent));
+            cost.setCentavos(Number.parseInt(cent));
+        
+            var total = a.add(cost);
+            console.log(total);
+            document.getElementById("test").innerHTML = total;
+        }
+
+
+    </script>
+    <!--input type="hidden" id="hielera" value="true"/>
   <script>
     let total = 5045;
     total = Math.round(20.49);
@@ -75,7 +59,7 @@
   <input type="button" class="c_negro" />
   <input type="button" class="c_oyster" />
   -->
-  <!--p id="demo"></p>
+    <!--p id="demo"></p>
     <input type="button" value="hi" onclick="attemp();">
     <script type='text/javascript' src="js/carrito.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
@@ -121,4 +105,5 @@
     </script>
     -->
 </body>
+
 </html>

@@ -3,6 +3,7 @@
  * mail. magand07@gmail.com
  * tel. 5547631372
  */
+// convierte el total global a tipo saldo
 function totalToSaldo(){
   var dot = String(stotal).indexOf(".");
   var ent = Number.parseInt(stotal);
@@ -22,11 +23,9 @@ function calcular(costo_e,costo_c=0, nombre, input, id_tabla, val_tabla = "Si") 
     if (checkWindShield(nombre) != 1) {
       valor = input.value;
       var r = 0;
-
       var costo = new Saldo();
       costo.setEntero(Number.parseInt(costo_e));
-      costo.setCentavos(Number.parseInt(costo_c));
-      
+      costo.setCentavos(Number.parseInt(costo_c));      
       if (valor == "false") {
         var respuesta = confirm("Cancelar " + nombre + "?");
         if (respuesta) {
@@ -222,6 +221,7 @@ function allOff() {
   $(".oyster80").hide();
   $(".split").hide();
   $(".tinted").hide();
+  allSeatsOff();
 }
 // dejar todas los colores en off
 function allColorsOff() {
