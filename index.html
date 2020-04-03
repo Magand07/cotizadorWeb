@@ -28,10 +28,11 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script type='text/javascript' src="js/carrito.js"></script>
+  <script type='text/javascript' src="js/saldo.js"></script>
+  <script type='text/javascript' src="js/init.js"></script>
   <script type='text/javascript' src="js/script.js"></script>
   <script type='text/javascript' src="js/info.js"></script>
- 
-  <script type='text/javascript' src="js/init.js"></script>
+
 
   <meta http-equiv="Expires" content="0">
   <meta http-equiv="Last-Modified" content="0">
@@ -86,9 +87,27 @@
   <!--flag to sell-->
   <input type="hidden" id="split" name="split" value="true" />
   <input type="hidden" id="tinted" name="tinted" value="true" />
-  
-  <input type="hidden" id="cent" name="cent" value="0"/>
-  <input type="hidden" id="ent" name="ent" value="0"/>
+  <!--seat color-->
+  <input type="hidden" id="asientonegro" name="asientonegro" value="true" />
+  <input type="hidden" id="asientooyster" name="asientooyster" value="true" />
+  <input type="hidden" id="asientostonebeige" name="asientostonebeige" value="true" />
+  <!-- sear premium color -->
+  <input type="hidden" id="premiumgrey" name="premiumgrey" value="true" />
+  <input type="hidden" id="premiummushroom" name="premiummushroom" value="true" />
+  <input type="hidden" id="premiumnegro" name="premiumnegro" value="true" />
+
+  <input type="hidden" id="stotal" name="stotal" value="" />
+  <input type="hidden" id="ent" name="ent" value="5540" />
+  <input type="hidden" id="cent" name="cent" value="0" />
+  <script>
+    carrito = new Carro();
+    carrito.setModelo("Freedom TXT");
+    carrito.setType("Gas");
+    carrito.setCost();
+    //var stotal = carrito.cost;
+    document.getElementById("ent").value = carrito.cost;
+    document.getElementById("cent").value = 0;
+  </script>
 
   <header>
     <img src="images/identidad/Logo.png" width="350px" height="150px">
@@ -203,6 +222,14 @@
       <img class="grey80" src="images/RXV/top80/grey80.png" alt="grey80" width="500px" height="340">
       <img class="oyster80" src="images/RXV/top80/oyster80.png" alt="oyster80" width="500px" height="340">
 
+      <!--seat color-->
+      <img class="asientonegro" src="images/RXV/asientos/negro.png" name="asientonegro" value="true" />
+      <img class="asientooyster" src="images/RXV/asientos/oyster.png" name="asientooyster" value="true" />
+      <img class="asientostonebeige" src="images/RXV/asientos/stonebeige.png" name="asientostonebeige" value="true" />
+      <img class="premiumgrey" src="images/RXV/asientos/premium/grey.png" name="premiumgrey" value="true" />
+      <img class="premiummushroom" src="images/RXV/asientos/premium/mushroom.png" name="premiummushroom" value="true" />
+      <img class="premiumnegro" src="images/RXV/asientos/premium/negro.png" name="premiumnegro" value="true" />
+
       <img class="split" src="images/RXV/windshield/split.png" alt="oyster80" width="500px" height="340">
       <img class="tinted" src="images/RXV/windshield/tinted.png" alt="oyster80" width="500px" height="340">
 
@@ -230,19 +257,54 @@
             <i id="descripcion_carrito">
             </i>
           </p><br>
-          
+
+        </div>
+      </div>
+      <div class="new_row">
+        <div id="color_asiento_basico">
+          <ul class='square'>
+            <h5>Color asientos</h5>
+              <li>
+                <input title='Negro' class='c_negro' type='button' name='c_negro_basic' id='c_negro_basic' onclick=''>
+              </li>
+              <li>
+                <input title='Oyster' class='c_oyster' type='button' name='Oyser' id='Oyser' onclick=''>
+              </li>
+              <li>
+                <input title='Stonebeige' class='c_stone_beige' type='c_stonebeige_basic' name='c_stonebeige_basic' id='c_stonebeige_basic' onclick=''>
+              </li>
+          </ul>
+        </div>
+      </div>
+      <div class="new_row">
+        <div id="color_asiento_premium">
+          <ul class='square'>
+            <h5>Color asientos</h5>
+              <li>
+                <input title='Negro' class='c_negro' type='button' name='c_negro_premium' id='c_negro_premium' onclick=''>
+              </li>
+              <li>
+                <input title='Grey' class='c_grey' type='button' name='c_grey_premium' id='c_grey_premium' onclick=''>
+              </li>
+              <li>
+                <input title='Mushroom' class='c_mushroom' type='button' name='c_mushroom_premium' id='c_mushroom_premium' onclick=''>
+              </li>
+          </ul>
         </div>
       </div>
       <div class="new_row">
         <div id="colores_top" name="colores_top">
-            
-        </div><br>
-        <div id="colores_asientos" name="colores_asientos">
-          
         </div>
       </div>
+      <div class="new_row">
+        <div id="colores_asientos" name="colores_asientos">
+        </div>
+      </div>
+     
 
-      <div class="new_row" id="colores"></div>
+      <div class="new_row" id="colores">
+
+      </div>
       <div class="new_row">
         <input type="button" name="Borrar" id="Borrar" value="Borrar Cotización" onclick="borrarCot();">
       </div>
@@ -305,38 +367,39 @@
           <th class="title2">Caja de guantes</th>
           <th class="title2">Top </th>
           <th class="title2">Color Top</th>
-      </tr>
-          <tr>
-              <td name="c_t_rxv" id="c_t_rxv">
-              </td>
-              <td name="ae_t_rxv" id="ae_t_rxv" class="f2">
-              </td>
-              <td name="r_t_rxv" id="r_t_rxv">
-              </td>
-              <td name="hi_t_rxv" id="hi_t_rxv" class="f2">
-              </td>
-              <td name="hd_t_rxv" id="hd_t_rxv">
-              </td>
-              <td name="s_t_rxv" id="s_t_rxv" class="f2">
-              </td>
-              <td name="w_t" id="w_t" >
-              </td>
-              <td name="led_t" id="led_t" class="f2">
-              </td>
-              <td name="ts_t" id="ts_t" class="f2">
-              </td>
-              <td name="gb_t" id="gb_t" >
-              </td>
-              <td name="tp_t" id="tp_t" class="f2">
-              </td>
-              <td name="tpc_t" id="tpc_t" >
-              </td>
-          </tr>
+        </tr>
+        <tr>
+          <td name="c_t_rxv" id="c_t_rxv">
+          </td>
+          <td name="ae_t_rxv" id="ae_t_rxv" class="f2">
+          </td>
+          <td name="r_t_rxv" id="r_t_rxv">
+          </td>
+          <td name="hi_t_rxv" id="hi_t_rxv" class="f2">
+          </td>
+          <td name="hd_t_rxv" id="hd_t_rxv">
+          </td>
+          <td name="s_t_rxv" id="s_t_rxv" class="f2">
+          </td>
+          <td name="w_t" id="w_t">
+          </td>
+          <td name="led_t" id="led_t" class="f2">
+          </td>
+          <td name="ts_t" id="ts_t" class="f2">
+          </td>
+          <td name="gb_t" id="gb_t">
+          </td>
+          <td name="tp_t" id="tp_t" class="f2">
+          </td>
+          <td name="tpc_t" id="tpc_t">
+          </td>
+        </tr>
       </table>
     </div>
     <div class="new_row">
       <h4 id='total_t' name='total_t'>
-        Total $<script> document.write(carrito.cost);</script> usd
+        Total $
+        <script> document.write(carrito.cost);</script> usd
       </h4>
     </div>
   </div>
