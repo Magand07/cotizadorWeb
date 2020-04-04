@@ -16,12 +16,12 @@ function totalToSaldo(){
   return new Saldo(Number.parseInt(ent),Number.parseInt(cent));
 }
 function calcular(costo_e,costo_c=0, nombre, input, id_tabla, val_tabla = "Si") {// este sera un problema 
-  //alert("CALCULAR id tabla: " + id_tabla + " input " + input + "=" + input.value);
+  console.log("CALCULAR id tabla: " + id_tabla + " input " + input.value );
   var newTotal = totalToSaldo();
   console.log(newTotal);
   if (noDoubleItem(nombre) != 1) {
     if (checkWindShield(nombre) != 1) {
-      valor = input.value;
+      var valor = input.value;
       var r = 0;
       var costo = new Saldo();
       costo.setEntero(Number.parseInt(costo_e));
@@ -130,8 +130,20 @@ function cambiar(clase, input) {
     $("." + clase).hide();
     input.value = true;
   } else {
-    input.value = false;
     $("." + clase).show();
+    input.value = false;
+  }
+}
+
+function cambiarAsiento(clase,input){// hacerla una con cambiar TODO
+  console.log("ocultar imagen: "+clase+" valor del input "+input.value);
+  var bandera = input.value;
+  if (bandera == "false") {
+    $("." + clase).show();
+    input.value = false;
+  } else {
+    $("." + clase).hide();  
+    input.value = true;
   }
 }
 
@@ -194,6 +206,9 @@ function firstLoad() {
   $(".oyster80").hide();
   $(".split").hide();
   $(".tinted").hide();
+  $("#color_asiento_premium").hide();
+  $("#aeb").hide();
+  $("#aebrxv").hide();
 }
 // all off
 function allOff() {
@@ -240,9 +255,9 @@ function allSeatsOff(){
  $(".asientonegro").hide();
  $(".asientooyster").hide();
  $(".asientostonebeige").hide();
- $(".premiumgrey").hide();
- $(".premiummushroom").hide();
- $(".premiumnegro").hide();
+ $(".premiumgreyimg").hide();
+ $(".premiummushroomimg").hide();
+ $(".premiumnegroimg").hide();
 }
 function resetFlags() {
   document.getElementById("asientos_extra").value = true;
@@ -280,9 +295,7 @@ function resetFlags() {
   document.getElementById("negro80").value = true;
   document.getElementById("grey80").value = true;
   document.getElementById("oyster80").value = true;
-  document.getElementById("cent").value = true;
-  document.getElementById("ent").value = true;
-
+  document.getElementById("asiento_premium").value = true;
 
 }
 
@@ -402,4 +415,30 @@ function noDoubleItem(item) {
     }
   }
   return 0;
+}
+// muesta los colores disponibles para un asiento premium, oculta los basicos
+function asientoPremium(){
+  var input = document.getElementById("asiento_premium");
+  if(input.value =="true"){// aun no se compra
+    $("#color_asiento_premium").show();
+    $("#color_asiento_basico").hide();
+    input.value = "false";// se tomo el asiento premium
+    $("#aeb").show();
+    $("#aebrxv").show();
+    
+  }else{ // help!
+    $("#color_asiento_premium").hide();
+    $("#color_asiento_basico").show();
+    input.value = "true"; // se retiro el asiento premium
+    $("#aeb").hide();
+    $("#aebrxv").hide();
+    $("#colores_asientos").hide();
+    document.getElementById("asientonegro").value = true;
+    document.getElementById("asientooyster").value = true;
+    document.getElementById("asientostonebeige").value = true;
+
+    document.getElementById("premiumgrey").value= true;
+    document.getElementById("premiummushroom").value= true;
+    document.getElementById("premiumnegro").value= true;
+  }  
 }

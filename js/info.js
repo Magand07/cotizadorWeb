@@ -42,7 +42,10 @@ let input_colores_txt = "<ul class='square'>" + "<h5>Color </h5>" +
     "</ul>";
 
 let inputs_adds_basics = "<li>" +
-    "<input type='button' value='Asientos extra (2) $1,558' onclick='coloresAsientos();calcular(1558,0,\"Asientos extra\",getElementById(\"asientos_extra\"),\"ae_t\");'>" +
+    "<input type='button' value='Asientos Premium $394' onclick='asientoPremium();'>" +
+    "</li>" +
+    "<li>" +
+    "<input id='aeb' type='button' value='Asientos extra (2) $1,558' onclick='coloresAsientos();calcular(1558,0,\"Asientos extra\",getElementById(\"asientos_extra\"),\"ae_t\");'>" +
     "</li>" +
     "<li><input type='button' value='Rines $727.3' onclick='calcular(727,30,\"Rines\",getElementById(\"rines\"),\"r_t\");cambiarFoto(9,\"r_t\");'>" +
     "</li>" +
@@ -75,7 +78,10 @@ let input_colores_rxv = "<ul class='square'>" + "<h5>Color </h5>" +
     "</ul>";
 
 let input_adds_rxv = "<li>" +
-    "<input type='button' value='Asientos extra (2) $1,558' onclick='coloresAsientos();calcular(1558,0,\"Asientos extra\",getElementById(\"asientos_extra\"),\"ae_t_rxv\");'>" +
+    "<input type='button' value='Asientos Premium $394' onclick='asientoPremium();'>" +
+    "</li>" +
+    "<li>" +
+    "<input id='aebrxv' type='button' value='Asientos extra (2) $1,558' onclick='coloresAsientos();calcular(1558,0,\"Asientos extra\",getElementById(\"asientos_extra\"),\"ae_t_rxv\");'>" +
     "</li>" +
     "<li><input type='button' value='Rines $727.3' onclick='calcular(727,30,\"Rines\",getElementById(\"rines\"),\"r_t_rxv\");cambiarFoto(9,\"r_t\");'>" +
     "</li>" +

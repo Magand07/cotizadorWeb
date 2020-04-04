@@ -6,12 +6,14 @@
 setModelo("Freedom TXT");
 showDescription(carrito.modelo, carrito.type);
 
+
 function setModelo(modelo) {
     resetFlags();
     resetTable();
     allOff();
     $("#colores_top").hide();
     $("#colores_asientos").hide();
+    
     if (modelo == "Freedom RXV") {
         $(".rojo").show();
         document.getElementById("botones_caracteristicas").innerHTML = "" +
@@ -21,6 +23,8 @@ function setModelo(modelo) {
         $("#Contenedor_slider").hide();
         $("#tabla_cotizacion_txt").hide();
         $("#tabla_cotizacion_rxv").show();
+        $("#aebrxv").hide();
+        $("#aeb").hide();
     }
     if (modelo == "Freedom TXT") {
         document.getElementById("botones_caracteristicas").innerHTML = "" +
@@ -107,9 +111,9 @@ function showDescription(modelo, type) {
 // muestra los colores disponibles para el asiento extra
 function coloresAsientos() {
     if(carrito.modelo == "Freedom RXV"){
-        document.getElementById("colores_asientos").innerHTML = "Color asiento extra: " + colores_asientos_rxv;// ahora faltara una funcion que los borre
+        document.getElementById("colores_asientos").innerHTML = "<h5>Color asiento extra </h5>" + colores_asientos_rxv;// ahora faltara una funcion que los borre
     }else{
-        document.getElementById("colores_asientos").innerHTML = "Color asiento extra: " + colores_asientos;// ahora faltara una funcion que los borre
+        document.getElementById("colores_asientos").innerHTML = "<h5>Color asiento extra </h5> " + colores_asientos;// ahora faltara una funcion que los borre
     }
     $("#colores_asientos").show();
 }
@@ -121,6 +125,6 @@ function CT_tabla(medida) {
     } else if (medida == 54) {
         colores_top = colores_top_54;
     }
-    document.getElementById("colores_top").innerHTML = "Color Top: " + colores_top;
+    document.getElementById("colores_top").innerHTML = "<h5>Color Top </h5> " + colores_top;
     $("#colores_top").show();
 }
