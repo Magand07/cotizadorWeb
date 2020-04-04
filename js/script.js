@@ -11,14 +11,14 @@ function totalToSaldo(){
   if(dot != -1){
     ent = String(stotal).substr(0,dot);
     cent = String(stotal).substr(dot+1);
-    console.log(ent+","+cent);
+    //console.log(ent+","+cent);
   }
   return new Saldo(Number.parseInt(ent),Number.parseInt(cent));
 }
 function calcular(costo_e,costo_c=0, nombre, input, id_tabla, val_tabla = "Si") {// este sera un problema 
-  console.log("CALCULAR id tabla: " + id_tabla + " input " + input.value );
+  ////console.log("CALCULAR id tabla: " + id_tabla + " input " + input.value );
   var newTotal = totalToSaldo();
-  console.log(newTotal);
+  //console.log(newTotal);
   if (noDoubleItem(nombre) != 1) {
     if (checkWindShield(nombre) != 1) {
       var valor = input.value;
@@ -37,6 +37,7 @@ function calcular(costo_e,costo_c=0, nombre, input, id_tabla, val_tabla = "Si") 
           // cancela el costo en la tabla
           llenarTabla(id_tabla, "");
         }
+        r = newTotal;
       } else {
         r = newTotal.add(costo);
         llenarTabla(id_tabla, val_tabla);
@@ -136,7 +137,7 @@ function cambiar(clase, input) {
 }
 
 function cambiarAsiento(clase,input){// hacerla una con cambiar TODO
-  console.log("ocultar imagen: "+clase+" valor del input "+input.value);
+  //console.log("ocultar imagen: "+clase+" valor del input "+input.value);
   var bandera = input.value;
   if (bandera == "false") {
     $("." + clase).show();
